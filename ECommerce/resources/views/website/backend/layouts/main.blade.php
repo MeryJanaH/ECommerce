@@ -29,7 +29,8 @@
 							<p class="sale-info">Only price: <span class="price">$59.99</span></p>
 							<a href="#" class="btn-link">Shop Now</a>
 						</div>
-					</div>
+                    </div>
+
 					<div class="item-slide">
 						<img src="assets/images/main-slider-1-2.jpg" alt="" class="img-slide">
 						<div class="slide-info slide-2">

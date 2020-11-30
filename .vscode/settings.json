@@ -1,3 +1,10 @@
 {
-    "python.pythonPath": "C:\\Python39\\python.exe"
+    "python.pythonPath": "C:\\Python39\\python.exe",
+    "cSpell.words": [
+        "categorie",
+        "newform",
+        "produit",
+        "produits",
+        "quantite"
+    ]
 }

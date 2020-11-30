@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\models\produits;
+use App\models\produit;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\DB;
 
 class ProduitsController extends Controller
 {
@@ -14,7 +16,8 @@ class ProduitsController extends Controller
      */
     public function index()
     {
-        //
+      $data = produit::all();
+      return view('website.backend.layouts.main', ['data'=>$data]);
     }
 
     /**
@@ -44,7 +47,7 @@ class ProduitsController extends Controller
      * @param  \App\models\produits  $produits
      * @return \Illuminate\Http\Response
      */
-    public function show(produits $produits)
+    public function show(produit $produits)
     {
         //
     }
@@ -55,7 +58,7 @@ class ProduitsController extends Controller
      * @param  \App\models\produits  $produits
      * @return \Illuminate\Http\Response
      */
-    public function edit(produits $produits)
+    public function edit(produit $produits)
     {
         //
     }
@@ -67,7 +70,7 @@ class ProduitsController extends Controller
      * @param  \App\models\produits  $produits
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, produits $produits)
+    public function update(Request $request, produit $produits)
     {
         //
     }
@@ -78,7 +81,7 @@ class ProduitsController extends Controller
      * @param  \App\models\produits  $produits
      * @return \Illuminate\Http\Response
      */
-    public function destroy(produits $produits)
+    public function destroy(produit $produits)
     {
         //
     }

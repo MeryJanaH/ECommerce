@@ -20,6 +20,12 @@ class ProduitsController extends Controller
       return view('website.backend.layouts.main', ['data'=>$data]);
     }
 
+    public function boutique()
+    {
+        $data= produit::all();
+        return view('website.backend.layouts.shop', ['data'=>$data]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -44,7 +50,7 @@ class ProduitsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\produits  $produits
+     * @param  \App\models\produit  $produits
      * @return \Illuminate\Http\Response
      */
     public function show(produit $produits)
@@ -55,7 +61,7 @@ class ProduitsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\models\produits  $produits
+     * @param  \App\models\produit  $produits
      * @return \Illuminate\Http\Response
      */
     public function edit(produit $produits)
@@ -67,7 +73,7 @@ class ProduitsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\produits  $produits
+     * @param  \App\models\produit  $produits
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, produit $produits)
@@ -78,7 +84,7 @@ class ProduitsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\models\produits  $produits
+     * @param  \App\models\produit  $produits
      * @return \Illuminate\Http\Response
      */
     public function destroy(produit $produits)

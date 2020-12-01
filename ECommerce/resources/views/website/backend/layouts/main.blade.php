@@ -406,7 +406,7 @@
                                             </div>
                                             <div class="product-info">
                                                 <a href="#" class="product-name"><span>{{$product->nom_prod}}</span></a>
-                                                <div class="wrap-price"><span class="product-price">{{$product->prix}}</span></div>
+                                                <div class="wrap-price"><span class="product-price">{{$product->getPriceAttribute($product->prix)}}</span></div>
                                             </div>
                                         </div>
                                         @endif
@@ -452,9 +452,6 @@
 											<div class="group-flash">
 												<span class="flash-item new-label">new</span>
 											</div>
-											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
-											</div>
 										</div>
 										<div class="product-info">
 											<a href="#" class="product-name"><span>{{$product->nom_prod}}</span></a>
@@ -475,19 +472,9 @@
 											<a href="detail.html" title={{$product->nom_prod}}>
 												<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 											</a>
-											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
-											</div>
 										</div>
 										<div class="product-info">
 											<a href="#" class="product-name"><span>{{$product->nom_prod}}</span></a>
-											<div class="product-rating">
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star" aria-hidden="true"></i>
-											</div>
 											<div class="wrap-price"><span class="product-price">{{$product->prix}}</span></div>
 										</div>
                                     </div>
@@ -497,7 +484,7 @@
                             </div>
 
 
-							<div class="tab-content-item active" id="fashion_1e">
+							<div class="tab-content-item" id="fashion_1e">
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
                                 @foreach ($data as $product)
                                     @if($product['cat_id'] == 5)
@@ -509,9 +496,6 @@
 											<div class="group-flash">
 												<span class="flash-item new-label">new</span>
 											</div>
-											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
-											</div>
 										</div>
 										<div class="product-info">
 											<a href="#" class="product-name"><span>{{$product->nom_prod}}</span></a>
@@ -524,7 +508,7 @@
                             </div>
 
 
-							<div class="tab-content-item active" id="fashion_1f">
+							<div class="tab-content-item" id="fashion_1f">
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
                                 @foreach ($data as $product)
                                     @if($product['cat_id'] == 6)

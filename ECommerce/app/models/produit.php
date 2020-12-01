@@ -18,7 +18,7 @@ class produit extends Model
 
 
     public function prod_categories(){
-        return $this->belongsTo('app\models\categorie');
+        return $this->belongsTo('\App\models\categorie');
     }
 
     public function getPriceAttribute($value)

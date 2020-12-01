@@ -19,4 +19,8 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('index', 'ProduitsController@index');
+Route::get('index', ['uses'=>"ProduitsController@index", 'as' => 'index']);
+
+Route::get('boutique', ['uses'=>"ProduitsController@boutique",'uses' => "CategoriesController@boutique",'as'=>'boutique']);
+
+

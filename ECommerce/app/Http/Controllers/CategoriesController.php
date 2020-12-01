@@ -17,6 +17,13 @@ class CategoriesController extends Controller
         //
     }
 
+    public function boutique()
+    {
+        $data_cat = categorie::all();
+        return view('website.backend.layouts.shop', ['data_cat' => $data_cat]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +48,7 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\categories  $categories
+     * @param  \App\models\categorie  $categories
      * @return \Illuminate\Http\Response
      */
     public function show(categories $categories)
@@ -52,7 +59,7 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\models\categories  $categories
+     * @param  \App\models\categorie  $categories
      * @return \Illuminate\Http\Response
      */
     public function edit(categories $categories)
@@ -64,7 +71,7 @@ class CategoriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\categories  $categories
+     * @param  \App\models\categorie  $categories
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, categories $categories)
@@ -75,7 +82,7 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\models\categories  $categories
+     * @param  \App\models\categorie  $categories
      * @return \Illuminate\Http\Response
      */
     public function destroy(categories $categories)

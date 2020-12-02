@@ -120,7 +120,7 @@
 									<a href="{{route('index')}}" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
 								</li>
 								<li class="menu-item">
-									<a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+									<a href="{{route('about-us')}}" class="link-term mercado-item-title">Â propos de Nous</a>
 								</li>
 								<li class="menu-item">
                                 <a href="{{route('boutique')}}" class="link-term mercado-item-title">Boutique</a>

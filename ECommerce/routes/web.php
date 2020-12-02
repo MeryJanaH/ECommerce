@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about-us', function () {
-    return view('website.backend.layouts.about-us');
-});
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -29,3 +25,5 @@ Route::get('index', ['uses'=>"ProduitsController@index", 'as' => 'index']);
 Route::get('boutique', ['uses' => "CategoriesController@boutique",'as'=>'boutique']);
 
 Route::get('boutique/{nom}', ['uses' => "ProduitsController@show"]);
+
+Route::get('about-us', ['uses' => "AdminController@about", 'as' => 'about-us']);

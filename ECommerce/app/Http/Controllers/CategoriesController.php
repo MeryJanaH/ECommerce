@@ -20,7 +20,8 @@ class CategoriesController extends Controller
     public function boutique()
     {
         $data_cat = categorie::all();
-        return view('website.backend.layouts.shop', ['data_cat' => $data_cat]);
+        $data = \App\Models\produit::inRandomOrder()->get();
+        return view('website.backend.layouts.shop', ['data_cat' => $data_cat, 'data' => $data]);
     }
 
 
@@ -51,9 +52,10 @@ class CategoriesController extends Controller
      * @param  \App\models\categorie  $categories
      * @return \Illuminate\Http\Response
      */
-    public function show(categories $categories)
+    public function show()
     {
-        //
+        $data_cat = categorie::all();
+        return view('website.backend.layouts.shop', ['data_cat' => $data_cat]);
     }
 
     /**
@@ -62,7 +64,7 @@ class CategoriesController extends Controller
      * @param  \App\models\categorie  $categories
      * @return \Illuminate\Http\Response
      */
-    public function edit(categories $categories)
+    public function edit(categorie $categories)
     {
         //
     }
@@ -74,7 +76,7 @@ class CategoriesController extends Controller
      * @param  \App\models\categorie  $categories
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, categories $categories)
+    public function update(Request $request, categorie $categories)
     {
         //
     }
@@ -85,7 +87,7 @@ class CategoriesController extends Controller
      * @param  \App\models\categorie  $categories
      * @return \Illuminate\Http\Response
      */
-    public function destroy(categories $categories)
+    public function destroy(categorie $categories)
     {
         //
     }

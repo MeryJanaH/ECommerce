@@ -398,7 +398,7 @@
                                         <div class="product product-style-2 equal-elem ">
                                             <div class="product-thumnail">
                                                 <a href="detail.html" title={{$product->nom_prod}}>
-                                                <figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+                                                <figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" width="800" height="800" alt=""></figure>
                                                 </a>
                                                 <div class="group-flash">
                                                     <span class="flash-item new-label">new</span>

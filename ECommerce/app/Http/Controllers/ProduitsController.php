@@ -20,12 +20,6 @@ class ProduitsController extends Controller
       return view('website.backend.layouts.main', ['data'=>$data]);
     }
 
-    public function boutique()
-    {
-        $data= produit::all();
-        return view('website.backend.layouts.shop', ['data'=>$data]);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -53,9 +47,13 @@ class ProduitsController extends Controller
      * @param  \App\models\produit  $produits
      * @return \Illuminate\Http\Response
      */
-    public function show(produit $produits)
+    public function show(string $nom)
     {
-        //
+        $tmp = \App\Models\categorie::where('nom', $nom)->get();
+        $prod_cat = \App\Models\produit::where('cat_id', $tmp[0]['id'])->get();
+        $data_cat = \App\Models\categorie::all();
+
+        return view('website.backend.layouts.shop', ['prod_cat' => $prod_cat, 'data_cat' => $data_cat, 'nom_cat' => $nom]);
     }
 
     /**

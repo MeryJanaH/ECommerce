@@ -17,7 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about-us', function () {
+    return view('website.backend.layouts.about-us');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('index', ['uses'=>"ProduitsController@index", 'as' => 'index']);
 

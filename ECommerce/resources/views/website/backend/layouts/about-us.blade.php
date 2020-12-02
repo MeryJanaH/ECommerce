@@ -64,7 +64,7 @@ des produits de très bonne qualité, On vous propose des centaines de millions 
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 						<div class="aboutus-info style-small-left">
 							<b class="box-title">Notre mission?</b>
-							<p class="txt-content"> 
+							<p class="txt-content">
 En tant que membre du groupe <b>AMWA </b>, notre mission est de faciliter les affaires partout.</br>
 Nous faisons cela en donnant aux fournisseurs les outils nécessaires pour atteindre un public mondial pour leurs produits, et en aidant les acheteurs à trouver des produits et des fournisseurs rapidement et efficacement.
 							</div>
@@ -136,14 +136,9 @@ Lancé en 2005, AMWA est la principale plate-forme pour le commerce de gros mond
 
 							<div class="team-member equal-elem">
 								<div class="media">
-									<a href="#" title="LEONA">
-									<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" alt="{{$product->nom_prod}}"></figure>
+									<a title="Meryem ANNOUAR">
+									<figure><img src="{{Storage::disk('local')->url('/mery_pic.jpeg')}}" alt="Meryem ANNOUAR"></figure>
 									</a>
-								</div>
-								<div class="info">
-									<b class="name">MERYEM ANNOUAR</b>
-									<span class="title">Director</span>
-									<p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
 								</div>
 							</div>
 

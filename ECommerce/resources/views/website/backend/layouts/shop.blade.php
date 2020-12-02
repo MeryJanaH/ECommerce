@@ -78,24 +78,7 @@
 							<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
 								<div class="product product-style-3 equal-elem ">
 									<div class="product-thumnail">
-										<a href="detail.html" title="{{$product->nom_prod}}">
-											<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" alt="{{$product->nom_prod}}"></figure>
-										</a>
-									</div>
-									<div class="product-info">
-										<a href="#" class="product-name"><span>{{$product->nom_prod}}</span></a>
-										<div class="wrap-price"><span class="product-price">{{$product->getPriceAttribute($product->prix)}}</span></div>
-										<a href="#" class="btn add-to-cart">Add To Cart</a>
-									</div>
-                                </div>
-                            </li>
-                            @endforeach
-                            @else
-                            @foreach ($data as $product)
-							<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-								<div class="product product-style-3 equal-elem ">
-									<div class="product-thumnail">
-										<a href="detail.html" title="{{$product->nom_prod}}">
+										<a href="{{route('detail')}}" title="{{$product->nom_prod}}">
 											<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" alt="{{$product->nom_prod}}"></figure>
 										</a>
 									</div>
@@ -109,16 +92,9 @@
                             @endforeach
                             @endif
 						</ul>
-					</div>
-
+                    </div>
 					<div class="wrap-pagination-info">
-						<ul class="page-numbers">
-							<li><span class="page-number-item current" >1</span></li>
-							<li><a class="page-number-item" href="#" >2</a></li>
-							<li><a class="page-number-item" href="#" >3</a></li>
-							<li><a class="page-number-item next-link" href="#" >Next</a></li>
-						</ul>
-						<p class="result-count">Showing 1-8 of 12 result</p>
+                        {{$prod_cat->links()}}
 					</div>
 				</div><!--end main products area-->
                 </br></br></br>
@@ -127,11 +103,13 @@
 						<h2 class="widget-title">Toutes Les Catégories</h2>
 						<div class="widget-content">
 							<ul class="list-category">
+                                @if(isset($data_cat))
                                 @foreach ($data_cat as $cat)
 								<li class="category-item has-child-cate">
                                     <a href="/boutique/{{$cat['nom']}}" class="cate-link">{{$cat['nom']}}</a>
                                 </li>
                                 @endforeach
+                                @endif
 							</ul>
 						</div>
 					</div><!-- Categories widget-->

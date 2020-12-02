@@ -20,8 +20,8 @@ class CategoriesController extends Controller
     public function boutique()
     {
         $data_cat = categorie::all();
-        $data = \App\models\produit::inRandomOrder()->get();
-        return view('website.backend.layouts.shop', ['data_cat' => $data_cat, 'data' => $data]);
+        $prod_cat = \App\models\produit::inRandomOrder()->paginate(12);
+        return view('website.backend.layouts.shop', ['data_cat' => $data_cat, 'prod_cat' => $prod_cat]);
     }
 
 

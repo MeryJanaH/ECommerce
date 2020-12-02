@@ -45,16 +45,15 @@ des produits de très bonne qualité, On vous propose des centaines de millions 
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 						<div class="aboutus-box-score equal-elem ">
-							<b class="box-score-title">90%</b>
-							<span class="sub-title">Our Customers comeback</span>
-							<p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dummy text ever since the 1500s...</p>
-						</div>
+							<b class="box-score-title"> distribution</b>
+							<span class="sub-title">un client satisfait</span>
+							<p class="desc">Nous appelons nos entrepôts des centres de distribution car dès que vous cliquez sur ‘acheter’, c'est là que se déroule en intégralité le processus de traitement de la commande, de l'arrivée du produit via nos fournisseurs à l'envoi direct aux clients.</div>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 						<div class="aboutus-box-score equal-elem ">
-							<b class="box-score-title">2 million</b>
-							<span class="sub-title">User of the site</span>
-							<p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dummy text ever since the 1500s...</p>
+							<b class="box-score-title">Entepreneurs</b>
+							<span class="sub-title">créateurs</span>
+							<p class="desc">Nos inventions les plus révolutionnaires sont souvent celles qui poussent les autres à libérer leur propre créativité - afin de poursuivre leurs rêves. Voici les histoires des inventeurs, auteurs et entrepreneurs qui voient leur vie transformée grâce à AMWA.</p>
 						</div>
 					</div>
 				</div>
@@ -123,7 +122,7 @@ Lancé en 2005, AMWA est la principale plate-forme pour le commerce de gros mond
 				</div>
 
 				<div class="our-team-info">
-					<h4 class="title-box">Our teams</h4>
+					<h4 class="title-box">Notre Groupe</h4>
 					<div class="our-staff">
 						<div
 							class="slide-carousel owl-carousel style-nav-1 equal-container"
@@ -144,8 +143,8 @@ Lancé en 2005, AMWA est la principale plate-forme pour le commerce de gros mond
 
 							<div class="team-member equal-elem">
 								<div class="media">
-									<a href="#" title="LUCIA">
-										<figure><img src="assets/images/member-lucia.jpg" alt="LUCIA"></figure>
+									<a href="#" title="Wissal aarab">
+									<figure><img src="{{Storage::disk('local')->url('/wissal_pic.jpeg')}}" alt="Wissal Aarab"></figure>
 									</a>
 								</div>
 								<div class="info">
@@ -157,8 +156,8 @@ Lancé en 2005, AMWA est la principale plate-forme pour le commerce de gros mond
 
 							<div class="team-member equal-elem">
 								<div class="media">
-									<a href="#" title="NANA">
-										<figure><img src="assets/images/member-nana.jpg" alt="NANA"></figure>
+									<a href="#" title="younes khamlichi">
+									<figure><img src="{{Storage::disk('local')->url('/youness_pic.jpeg')}}"width="270px",height="300px", alt="youness khamlichi"></figure>
 									</a>
 								</div>
 								<div class="info">
@@ -170,8 +169,9 @@ Lancé en 2005, AMWA est la principale plate-forme pour le commerce de gros mond
 
 							<div class="team-member equal-elem">
 								<div class="media">
-									<a href="#" title="BRAUM">
-										<figure><img src="assets/images/member-braum.jpg" alt="BRAUM"></figure>
+									<a href="#" title="layla malak">
+									<figure><img src="assets/images/author-avata.jpg" alt="LAYLA malak"></figure>
+									</a>
 									</a>
 								</div>
 								<div class="info">
@@ -183,26 +183,26 @@ Lancé en 2005, AMWA est la principale plate-forme pour le commerce de gros mond
 
 							<div class="team-member equal-elem">
 								<div class="media">
-									<a href="#" title="LUCIA">
-										<figure><img src="assets/images/member-lucia.jpg" alt="LUCIA"></figure>
+									<a href="#" title="mohammed amin">
+										<figure><img src="assets/images/member-lucia.jpg" alt="mohammed amin"></figure>
 									</a>
 								</div>
 								<div class="info">
-									<b class="name">WISSAL AARAB</b>
-									<span class="title">Manager</span>
+									<b class="name">mohammed amin</b>
+									<span class="title">Comptable</span>
 									<p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
 								</div>
 							</div>
 
 							<div class="team-member equal-elem">
 								<div class="media">
-									<a href="#" title="NANA">
-										<figure><img src="assets/images/member-nana.jpg" alt="NANA"></figure>
+									<a href="#" title="NDIA maria">
+									<figure><img src="assets/images/member-nana.jpg" alt="NDIA maria"></figure>
 									</a>
 								</div>
 								<div class="info">
-									<b class="name">NANA</b>
-									<span class="title">Marketer</span>
+									<b class="name">NANA maria</b>
+									<span class="title">ressource humain</span>
 									<p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
 								</div>
 							</div>

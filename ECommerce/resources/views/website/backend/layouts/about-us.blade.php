@@ -30,17 +30,18 @@
 		<div class="container">
 			<!-- <div class="main-content-area"> -->
 				<div class="aboutus-info style-center">
-					<b class="box-title">Interesting</b>
-					<p class="txt-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
+					<b class="box-title">Nos Occupations </b>
+					<p class="txt-content">
+nous sommes une équipe très passionnée par la ventre de plusieurs catégories de produits, donc nous sommes là pour vous faciliter la vie en mettant à votre disposition tout sorte de produits</p>
 				</div>
 
 				<div class="row equal-container">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 						<div class="aboutus-box-score equal-elem ">
 							<b class="box-score-title">10000</b>
-							<span class="sub-title">Items in Store</span>
-							<p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dummy text ever since the 1500s...</p>
-						</div>
+							<span class="sub-title">produits disponible </span>
+							<p class="desc">
+des produits de très bonne qualité, On vous propose des centaines de millions de produits dans plus de 40 grandes catégories différentes, y compris l'électronique grand public, les machines et les vêtements.</div>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 						<div class="aboutus-box-score equal-elem ">
@@ -62,24 +63,30 @@
 
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 						<div class="aboutus-info style-small-left">
-							<b class="box-title">What we really do?</b>
-							<p class="txt-content">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>
-						</div>
+							<b class="box-title">Notre mission?</b>
+							<p class="txt-content"> 
+En tant que membre du groupe <b>AMWA </b>, notre mission est de faciliter les affaires partout.</br>
+Nous faisons cela en donnant aux fournisseurs les outils nécessaires pour atteindre un public mondial pour leurs produits, et en aidant les acheteurs à trouver des produits et des fournisseurs rapidement et efficacement.
+							</div>
 						<div class="aboutus-info style-small-left">
-							<b class="box-title">History of the Company</b>
-							<p class="txt-content">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>
+							<b class="box-title">Nos Proposition!</b>
+							<p class="txt-content">
+<b>AMWA</b> vous propose des centaines de millions de produits dans plus de 40 grandes catégories différentes, y compris l'électronique grand public, les machines et les vêtements.
+
+Les acheteurs de ces produits sont situés dans plus de 190 pays et régions et échangent chaque jour des centaines de milliers de messages avec les fournisseurs de la plateforme.</p>
 						</div>
 					</div>
 
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 						<div class="aboutus-info style-small-left">
-							<b class="box-title">Our Vision</b>
-							<p class="txt-content">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>
-						</div>
+							<b class="box-title">N'importe quand,n'importe où</b>
+							<p class="txt-content">
+En tant que plateforme, nous continuons à développer des services pour aider les entreprises à en faire plus et à découvrir de nouvelles opportunités.</div>
+
 						<div class="aboutus-info style-small-left">
-							<b class="box-title">Cooperate with Us!</b>
-							<p class="txt-content">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>
-						</div>
+							<b class="box-title">Notre histoire</b>
+							<p class="txt-content">
+Lancé en 2005, AMWA est la principale plate-forme pour le commerce de gros mondial. Nous servons des millions d'acheteurs et de fournisseurs à travers le monde.</div>
 					</div>
 
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -130,11 +137,11 @@
 							<div class="team-member equal-elem">
 								<div class="media">
 									<a href="#" title="LEONA">
-										<figure><img src="assets/images/member-leona.jpg" alt="LEONA"></figure>
+									<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" alt="{{$product->nom_prod}}"></figure>
 									</a>
 								</div>
 								<div class="info">
-									<b class="name">leona</b>
+									<b class="name">MERYEM ANNOUAR</b>
 									<span class="title">Director</span>
 									<p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
 								</div>
@@ -147,7 +154,7 @@
 									</a>
 								</div>
 								<div class="info">
-									<b class="name">LUCIA</b>
+									<b class="name">WISSAL AARAB</b>
 									<span class="title">Manager</span>
 									<p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
 								</div>
@@ -160,7 +167,7 @@
 									</a>
 								</div>
 								<div class="info">
-									<b class="name">NANA</b>
+									<b class="name">YOUNES KHAMLICHI</b>
 									<span class="title">Marketer</span>
 									<p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
 								</div>
@@ -173,7 +180,7 @@
 									</a>
 								</div>
 								<div class="info">
-									<b class="name">BRAUM</b>
+									<b class="name">LAYLA MALAK</b>
 									<span class="title">Member</span>
 									<p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
 								</div>
@@ -186,7 +193,7 @@
 									</a>
 								</div>
 								<div class="info">
-									<b class="name">LUCIA</b>
+									<b class="name">WISSAL AARAB</b>
 									<span class="title">Manager</span>
 									<p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
 								</div>

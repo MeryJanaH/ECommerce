@@ -3,13 +3,6 @@
 			<div class="row">
 				<div class="topbar-menu-area">
 					<div class="container">
-						<div class="topbar-menu left-menu">
-							<ul>
-								<li class="menu-item" >
-									<a title="Hotline: (+123) 456 789" href="#" ><span class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
-								</li>
-							</ul>
-						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
 								<li class="menu-item" ><a title="Register or Login" href="login.html">Login</a></li>
@@ -46,7 +39,7 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="index.html" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}" alt="" mercado"></a>
+							<a class="link-to-home"><img src="{{Storage::disk('local')->url('logo-top-1.png')}}" alt="" mercado></a>
 						</div>
 
 						<div class="wrap-search center-section">
@@ -82,15 +75,6 @@
 						</div>
 
 						<div class="wrap-icon right-section">
-							<div class="wrap-icon-section wishlist">
-								<a href="#" class="link-direction">
-									<i class="fa fa-heart" aria-hidden="true"></i>
-									<div class="left-info">
-										<span class="index">0 item</span>
-										<span class="title">Wishlist</span>
-									</div>
-								</a>
-							</div>
 							<div class="wrap-icon-section minicart">
 								<a href="#" class="link-direction">
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>

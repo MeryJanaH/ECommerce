@@ -397,7 +397,7 @@
                                         @if($product['cat_id'] == 1)
                                         <div class="product product-style-2 equal-elem ">
                                             <div class="product-thumnail">
-                                                <a href="detail.html" title={{$product->nom_prod}}>
+                                                <a href="/boutique/detail/{{$product->id}}" title={{$product->nom_prod}}>
                                                 <figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" width="800" height="800" alt=""></figure>
                                                 </a>
                                                 <div class="group-flash">
@@ -420,7 +420,7 @@
                                     @if($product['cat_id'] == 2)
                                     <div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title={{$product->nom_prod}}>
+											<a href="/boutique/detail/{{$product->id}}" title={{$product->nom_prod}}>
 												<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 											</a>
 											<div class="group-flash">
@@ -446,7 +446,7 @@
                                     @if($product['cat_id'] == 3)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title={{$product->nom_prod}}>
+											<a href="/boutique/detail/{{$product->id}}" title={{$product->nom_prod}}>
 												<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 											</a>
 											<div class="group-flash">
@@ -469,7 +469,7 @@
                                     @if($product['cat_id'] == 4)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title={{$product->nom_prod}}>
+											<a href="/boutique/detail/{{$product->id}}" title={{$product->nom_prod}}>
 												<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 											</a>
 										</div>
@@ -490,7 +490,7 @@
                                     @if($product['cat_id'] == 5)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title={{$product->nom_prod}}>
+											<a href="/boutique/detail/{{$product->id}}" title={{$product->nom_prod}}>
 												<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 											</a>
 											<div class="group-flash">
@@ -514,7 +514,7 @@
                                     @if($product['cat_id'] == 6)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title={{$product->nom_prod}}>
+											<a href="/boutique/detail/{{$product->id}}" title={{$product->nom_prod}}>
 												<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 											</a>
 											<div class="group-flash">

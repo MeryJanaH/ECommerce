@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('login', function () {
+    return view('website.backend.layouts.login');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/boutique/detail/{id}', ['uses' => "ProduitsController@detail", 'as' => 'detail']);

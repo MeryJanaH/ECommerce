@@ -17,11 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login', function () {
-    return view('website.backend.layouts.login');
-});
+//user authentication
 
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('login', ['uses' => "UserController@loginRegister"]);
 
 Route::get('/boutique/detail/{id}', ['uses' => "ProduitsController@detail", 'as' => 'detail']);
 
@@ -32,3 +33,8 @@ Route::get('boutique', ['uses' => "CategoriesController@boutique",'as'=>'boutiqu
 Route::get('boutique/{nom}', ['uses' => "ProduitsController@show"]);
 
 Route::get('about-us', ['uses' => "AdminController@about", 'as' => 'about-us']);
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

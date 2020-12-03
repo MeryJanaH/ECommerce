@@ -55,9 +55,11 @@ class ProduitsController extends Controller
 
         return view('website.backend.layouts.shop', ['prod_cat' => $prod_cat, 'data_cat' => $data_cat, 'nom_cat' => $nom]);
     }
-    public function detail()
+    public function detail($id)
     {
-        return view('website.backend.layouts.detail');
+        $id_p = \App\Models\produit::where('id', $id)->get();
+        $id_rel = \App\Models\produit::where('cat_id', $id_p[0]['cat_id'])->inRandomOrder()->get();
+        return view('website.backend.layouts.detail',['info_prod' => $id_p,'rel_prod' => $id_rel]);
     }
 
     /**

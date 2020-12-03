@@ -78,7 +78,7 @@
 							<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
 								<div class="product product-style-3 equal-elem ">
 									<div class="product-thumnail">
-										<a href="{{route('detail')}}" title="{{$product->nom_prod}}">
+										<a href="/boutique/detail/{{$product->id}}" title="{{$product->nom_prod}}">
 											<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" alt="{{$product->nom_prod}}"></figure>
 										</a>
 									</div>

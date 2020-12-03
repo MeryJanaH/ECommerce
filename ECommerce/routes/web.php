@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('detail', ['uses' => "ProduitsController@detail", 'as' => 'detail']);
+Route::get('/boutique/detail/{id}', ['uses' => "ProduitsController@detail", 'as' => 'detail']);
 
 Route::get('index', ['uses'=>"ProduitsController@index", 'as' => 'index']);
 

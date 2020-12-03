@@ -50,10 +50,10 @@
                             @inject('produit','\App\Models\produit')
                             <div class="wrap-price"><span class="product-price">{{$produit->getPriceAttribute($info_prod[0]['prix'])}}</span></div>
                             <div class="stock-info in-stock">
-                                <p class="availability">Availability: <b>In Stock</b></p>
+                                <p class="availability">Disponibilité: <b>{{$info_prod[0]['quantite']}} prouduit</b></p>
                             </div>
                             <div class="quantity">
-                            	<span>Quantity:</span>
+                            	<span>Quantité:</span>
 								<div class="quantity-input">
 									<input type="text" name="product-quatity" value="1" data-max="120" pattern="[0-9]*" >
 

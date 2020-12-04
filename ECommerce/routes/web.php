@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('privacy-policy', function () {
-    return view('website.backend.layouts.privacy-policy');
-});
-
 //user authentication
 
 //Auth::routes();
@@ -29,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/login', ['uses' => "UserController@login" ,'as' => 'login']);
 Route::get('/login/checklogin', ['uses' => "UserController@checklogin"]);
 Route::get('/login/successlogin', ['uses' => "UserController@successlogin"]);
+Route::get('/login/successloginadmin', ['uses' => "UserController@successloginadmin"]);
 Route::get('/login/logout', ['uses' => "UserController@logout"]);
 
 Route::get('/boutique/detail/{id}', ['uses' => "ProduitsController@detail", 'as' => 'detail']);
@@ -45,3 +42,17 @@ Route::get('about-us', ['uses' => "AdminController@about", 'as' => 'about-us']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('return-policy', function () {
+    return view('website.backend.layouts.terms.return-policy');
+});
+
+Route::get('privacy-policy', function () {
+    return view('website.backend.layouts.terms.privacy-policy');
+});
+
+Route::get('terms-conditions', function () {
+    return view('website.backend.layouts.terms.terms-conditions');
+});
+
+

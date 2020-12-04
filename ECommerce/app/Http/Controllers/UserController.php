@@ -20,12 +20,17 @@ class UserController extends Controller
 
         $user_data = array(
             'email' => $request -> get('email'),
-            'password' => $request -> get('password')
+            'password' => $request -> get('password'),
         );
 
+        $type = array('usertype' => $request->get('usertype'));
+        
         if(Auth::attempt($user_data))
         {
+            if($type === 'admin')
             return redirect('/login/successlogin');
+            else
+            return redirect('/login/successloginadmin');
         }
         else
         {
@@ -36,6 +41,11 @@ class UserController extends Controller
     public function successlogin()
     {
         return view('website.backend.layouts.main');
+    }
+
+    public function successloginadmin()
+    {
+        return view('website.backend.layouts.admin.dash');
     }
 
     public function logout()

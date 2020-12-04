@@ -24,6 +24,7 @@
         "produits",
         "quantite",
         "successlogin",
+        "successloginadmin",
         "unguard",
         "usertype"
     ]

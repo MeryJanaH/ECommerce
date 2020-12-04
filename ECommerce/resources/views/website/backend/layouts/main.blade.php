@@ -6,10 +6,8 @@
 
 @if(isset((Auth::User()->email)))
     <div class="alert alert-danger success-block">
-        <strong> welcome {{Auth::User()->email}}</strong>
+        <strong> Bonjour </strong>
     </div>
-</br>
-    <a href="{{url('/login/logout')}}">logout</a>
 @else
    <script>window.location='/login';</script>
 @endif

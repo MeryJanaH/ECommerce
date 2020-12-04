@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('privacy-policy', function () {
+    return view('website.backend.layouts.privacy-policy');
+});
+
 //user authentication
 
 //Auth::routes();

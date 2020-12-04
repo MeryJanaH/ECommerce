@@ -4,7 +4,7 @@ namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class produit extends Model
+class Produit extends Model
 {
     protected $fillable = [
         'quantite',
@@ -18,7 +18,7 @@ class produit extends Model
 
 
     public function prod_categories(){
-        return $this->belongsTo('\App\models\categorie');
+        return $this->belongsTo('\App\models\Categorie');
     }
 
     public function getPriceAttribute($value)

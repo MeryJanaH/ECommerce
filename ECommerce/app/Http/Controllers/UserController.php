@@ -21,13 +21,13 @@ class UserController extends Controller
         $user_data = array(
             'email' => $request -> get('email'),
             'password' => $request -> get('password'),
+            'usertype' => $request->get('usertype')
         );
 
-        $type = array('usertype' => $request->get('usertype'));
         
         if(Auth::attempt($user_data))
         {
-            if($type === 'admin')
+            if('usertype' === 'admin')
             return redirect('/login/successlogin');
             else
             return redirect('/login/successloginadmin');

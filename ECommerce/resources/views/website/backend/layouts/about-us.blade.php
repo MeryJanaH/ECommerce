@@ -37,7 +37,7 @@ Des produits de très bonne qualité, On vous propose des centaines de millions 
 						<div class="aboutus-box-score equal-elem ">
 							<b class="box-score-title"> distribution</b>
 							<span class="sub-title">un client satisfait</span>
-							<p class="desc">Nous appelons nos entrepôts des centres de distribution car dès que vous cliquez sur ‘acheter’, c'est là que se déroule en intégralité le processus de traitement de la commande, de l'arrivée du produit via nos fournisseurs à l'envoi direct aux clients.</div>
+							<p class="desc">Nous appelons nos entrepôts des centres de distribution car dès que vous cliquez sur ‘acheter’, c'est là que se déroule en intégralité le processus de traitement de la commande, de l'arrivée du Produit via nos fournisseurs à l'envoi direct aux clients.</div>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 						<div class="aboutus-box-score equal-elem ">

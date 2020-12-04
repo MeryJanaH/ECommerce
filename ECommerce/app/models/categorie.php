@@ -4,7 +4,7 @@ namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class categorie extends Model
+class Categorie extends Model
 {
     protected $fillable = [
         'nom'
@@ -12,6 +12,6 @@ class categorie extends Model
 
     public function products()
     {
-        return $this->hasMany('\App\models\produit');
+        return $this->hasMany('\App\models\Produit');
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\models\categorie;
+use App\models\Categorie;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -19,8 +19,8 @@ class CategoriesController extends Controller
 
     public function boutique()
     {
-        $data_cat = categorie::all();
-        $prod_cat = \App\models\produit::inRandomOrder()->paginate(12);
+        $data_cat = Categorie::all();
+        $prod_cat = \App\models\Produit::inRandomOrder()->paginate(12);
         return view('website.backend.layouts.shop', ['data_cat' => $data_cat, 'prod_cat' => $prod_cat]);
     }
 
@@ -49,22 +49,22 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\models\categorie  $categories
+     * @param  \App\models\Categorie  $categories
      * @return \Illuminate\Http\Response
      */
     public function show()
     {
-        $data_cat = categorie::all();
+        $data_cat = Categorie::all();
         return view('website.backend.layouts.shop', ['data_cat' => $data_cat]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\models\categorie  $categories
+     * @param  \App\models\Categorie  $categories
      * @return \Illuminate\Http\Response
      */
-    public function edit(categorie $categories)
+    public function edit(Categorie $categories)
     {
         //
     }
@@ -73,10 +73,10 @@ class CategoriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\categorie  $categories
+     * @param  \App\models\Categorie  $categories
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, categorie $categories)
+    public function update(Request $request, Categorie $categories)
     {
         //
     }
@@ -84,10 +84,10 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\models\categorie  $categories
+     * @param  \App\models\Categorie  $categories
      * @return \Illuminate\Http\Response
      */
-    public function destroy(categorie $categories)
+    public function destroy(Categorie $categories)
     {
         //
     }

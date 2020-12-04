@@ -47,8 +47,8 @@
                             <div class="wrap-social">
                             	<a class="link-socail" href="#"><img src="assets/images/social-list.png" alt=""></a>
                             </div>
-                            @inject('produit','\App\Models\produit')
-                            <div class="wrap-price"><span class="product-price">{{$produit->getPriceAttribute($info_prod[0]['prix'])}}</span></div>
+                            @inject('Produit','\App\Models\Produit')
+                            <div class="wrap-price"><span class="product-price">{{$Produit->getPriceAttribute($info_prod[0]['prix'])}}</span></div>
                             <div class="stock-info in-stock">
                                 <p class="availability">Disponibilité: <b>{{$info_prod[0]['quantite']}} prouduit</b></p>
                             </div>

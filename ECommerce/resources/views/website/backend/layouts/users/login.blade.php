@@ -10,7 +10,26 @@
 					<div class=" main-content-area">
 						<div class="wrap-login-item ">
 							<div class="login-form form-item form-stl">
-								<form name="frm-login">
+
+                                @if(isset(Auth::user()->email))
+                                <script> window.location="/login/successlogin";</script>
+                                @endif
+
+                                @if($message = Session::get('error'))
+                                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">*</button>
+                                   <strong>{{$message}}</strong>
+                                @endif
+                                @if(count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach($errors->all() as $error)
+                                        <li>{{$error}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+								<form methode="post" action={{url('/login/checklogin')}} name="frm-login">
 									<fieldset class="wrap-title">
 										<h3 class="form-title">s'identifier à votre compte</h3>
 									</fieldset>
@@ -20,7 +39,7 @@
 									</fieldset>
 									<fieldset class="wrap-input">
 										<label for="frm-login-pass">Mot de pass:</label>
-										<input type="password" id="frm-login-pass" name="pass" placeholder="************">
+										<input type="password" id="frm-login-pass" name="password" placeholder="************">
 									</fieldset>
 
 									<fieldset class="wrap-input">

@@ -19,10 +19,13 @@ Route::get('/', function () {
 
 //user authentication
 
-Auth::routes();
+//Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('login', ['uses' => "UserController@loginRegister"]);
+Route::get('/login', ['uses' => "UserController@login" ,'as' => 'login']);
+Route::get('/login/checklogin', ['uses' => "UserController@checklogin"]);
+Route::get('/login/successlogin', ['uses' => "UserController@successlogin"]);
+Route::get('/login/logout', ['uses' => "UserController@logout"]);
 
 Route::get('/boutique/detail/{id}', ['uses' => "ProduitsController@detail", 'as' => 'detail']);
 

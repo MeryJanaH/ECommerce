@@ -1,7 +1,8 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Database\Eloquent\Model;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -9,8 +10,14 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+
+     public function run()
     {
-        // $this->call(UserSeeder::class);
+        Model::unguard();
+        $this->call([
+            UserSeeder::class,
+            PostSeeder::class,
+            CommentSeeder::class,
+        ]);
     }
 }

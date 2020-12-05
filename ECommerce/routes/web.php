@@ -43,16 +43,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('website.backend.layouts.users.login');
 })->name('dashboard');
 
-Route::get('return-policy', function () {
-    return view('website.backend.layouts.terms.return-policy');
-});
+Route::get('return-policy', ['uses' => "AdminController@return", 'as' => 'return-policy']);
+Route::get('privacy-policy', ['uses' => "AdminController@privacy", 'as' => 'privacy-policy']);
+Route::get('terms-conditions', ['uses' => "AdminController@terms", 'as' => 'terms-conditions']);
 
-Route::get('privacy-policy', function () {
-    return view('website.backend.layouts.terms.privacy-policy');
-});
-
-Route::get('terms-conditions', function () {
-    return view('website.backend.layouts.terms.terms-conditions');
-});
 
 

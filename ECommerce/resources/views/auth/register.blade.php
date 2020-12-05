@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <a class="link-to-home"><img src="{{Storage::disk('local')->url('logo-top-1.png')}}" alt="" mercado></a>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

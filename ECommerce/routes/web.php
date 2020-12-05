@@ -40,7 +40,7 @@ Route::get('about-us', ['uses' => "AdminController@about", 'as' => 'about-us']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('website.backend.layouts.users.login');
 })->name('dashboard');
 
 Route::get('return-policy', function () {

@@ -23,7 +23,7 @@ class UserController extends Controller
             'password' => $request -> get('password')
         );
 
-        
+
         if(Auth::attempt($user_data))
         {
             $tmp = \App\Models\User::where('email', $request->get('email'))->get();
@@ -41,7 +41,8 @@ class UserController extends Controller
 
     public function successlogin()
     {
-        return view('website.backend.layouts.main');
+        return  redirect('../index');
+       // return view('website.backend.layouts.main');
     }
 
     public function successloginadmin()

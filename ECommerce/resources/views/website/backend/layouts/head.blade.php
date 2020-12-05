@@ -14,3 +14,12 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/color-01.css')}}">
 </head>
+
+@if(isset((Auth::User()->email)))
+    <div class="alert alert-danger success-block">
+        <?php $user = explode("@",Auth::User()->email);?>
+        <strong> {{$user[0]}} est connecter </strong>
+    </div>
+@else
+   <script>window.location='/login';</script>
+@endif

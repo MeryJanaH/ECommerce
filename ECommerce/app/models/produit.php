@@ -1,6 +1,6 @@
 <?php
 
-namespace App\models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,7 +18,7 @@ class Produit extends Model
 
 
     public function prod_categories(){
-        return $this->belongsTo('\App\models\Categorie');
+        return $this->belongsTo('\App\Models\Categorie');
     }
 
     public function getPriceAttribute($value)

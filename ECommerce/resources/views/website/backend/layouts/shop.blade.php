@@ -85,7 +85,7 @@
 									<div class="product-info">
 										<a href="#" class="product-name"><span>{{$product->nom_prod}}</span></a>
 										<div class="wrap-price"><span class="product-price">{{$product->getPriceAttribute($product->prix)}}</span></div>
-										<a href="#" class="btn add-to-cart">Add To Cart</a>
+										<a href="{{route('AddToCart',['id'=>$product->id])}}" class="btn add-to-cart">Ajouter au Panier</a>
 									</div>
                                 </div>
                             </li>

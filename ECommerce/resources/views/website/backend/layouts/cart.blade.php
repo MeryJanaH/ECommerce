@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+@include('website.backend.layouts.head')
+<body class=" shopping-cart page ">
+   <!--salut-->
+	<!-- mobile menu -->
+    <div class="mercado-clone-wrap">
+        <div class="mercado-panels-actions-wrap">
+            <a class="mercado-close-btn mercado-close-panels" href="#">x</a>
+        </div>
+        <div class="mercado-panels"></div>
+    </div>
+
+	<!--header-->
+   @include('website.backend.layouts.header')
+
+	<!--main area-->
+	<main id="main" class="main-site">
+
+		<div class="container">
+
+			<div class="wrap-breadcrumb">
+				<ul>
+					<li class="item-link"><a href="#" class="link">home</a></li>
+					<li class="item-link"><span>Chariot</span></li>
+				</ul>
+			</div>
+			<div class=" main-content-area">
+
+				<div class="wrap-iten-in-cart">
+					<h3 class="box-title">Nom des produits</h3>
+					<ul class="products-cart">
+                      @foreach ($cartItems->items as $item)
+						<li class="pr-cart-item">
+							<div class="product-image">
+								<figure><img src="{{Storage::disk('local')->url('products/'.$item['data']['photo'])}}" alt=""></figure>
+							</div>
+							<div class="product-name">
+								<a class="link-to-product">{{$item['data']['nom_prod']}}</a>
+							</div>
+							<div class="price-field produtc-price"><p class="price">${{$item['data']['prix']}}</p></div>
+							<div class="quantity">
+								<div class="quantity-input">
+									<input type="text" name="product-quatity" value="{{$item['quantity']}}" data-max="120" pattern="[0-9]*">
+									<a class="btn btn-increase" href="#"></a>
+									<a class="btn btn-reduce" href="#"></a>
+								</div>
+							</div>
+							<div class="price-field sub-total"><p class="price">${{$item['totalSinglePrice']}}</p></div>
+                                <a href="{{route('deleteItemCart',['id'=>$item['data']['id']])}}" class="btn btn-delete" title="">
+									<i class="fa fa-times-circle" aria-hidden="true"></i>
+								</a>
+                        </li>
+                         @endforeach
+					</ul>
+				</div>
+
+				<div class="summary">
+					<div class="order-summary">
+						<h4 class="title-box">RÉCAPITULATIF DE LA COMMANDE</h4>
+						<p class="summary-info"><span class="title">Subtotal</span><b class="index">${{$cartItems->totalPrice}}</b></p>
+						<p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>
+						<p class="summary-info total-info "><span class="title">Total</span><b class="index">$512.00</b></p>
+					</div>
+					<div class="checkout-info">
+						<a class="btn btn-checkout" href="checkout.html">Check out</a>
+						<a class="link-to-shop" href="boutique/">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+					</div>
+					<div class="update-clear">
+						<a class="btn btn-clear" href="#">Clear Shopping Cart</a>
+						<a class="btn btn-update" href="#">Update Shopping Cart</a>
+					</div>
+                </div>
+
+            </br></br></br>
+
+			</div><!--end main content area-->
+		</div><!--end container-->
+
+	</main>
+	<!--main area-->
+
+	<!--footer area-->
+    @include('website.backend.layouts.footer')
+
+    @include('website.backend.layouts.foot')
+	<!--footer area-->
+</body>
+</html>

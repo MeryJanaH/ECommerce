@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Cart;
 use App\Models\Produit;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class ProduitsController extends Controller
 {
@@ -18,6 +18,49 @@ class ProduitsController extends Controller
     {
       $data = Produit::all();
       return view('website.backend.layouts.main', ['data'=>$data]);
+    }
+
+    public function AddToCart(Request $request, $id)
+    {
+        //$request->session()->forget('cart');
+        //$request->session()->flush();
+        $prevCart = $request -> session() ->get('cart');
+        $cart = new Cart($prevCart);
+        $product = Produit::find($id);
+        $cart->AddItem($id, $product);
+        $request->session()->put('cart', $cart);
+        //dump($cart);
+        return redirect()->route('boutique');
+    }
+
+    public function ShowCart()
+    {
+        $cart = Session::get('cart');
+        //if cart not empty
+        if($cart)
+        {
+            return view('website.backend.layouts.cart',['cartItems'=>$cart]);
+        }
+        else
+        {
+            return redirect()->route('boutique');
+        }
+    }
+
+    public function deleteItemCart(Request $request,$id)
+    {
+        $cart = $request->session()->get('cart');
+        if(array_key_exists($id,$cart->items)){
+            unset($cart->items[$id]);
+        }
+
+        $prevCart = $request->session()->get('cart');
+        $updatedCart = new Cart($prevCart);
+        $updatedCart->updatePriceQuantity();
+
+        $request->session()->put("cart",$updatedCart);
+
+        return redirect()->route('cart');
     }
 
     /**

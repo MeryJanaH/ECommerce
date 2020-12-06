@@ -47,5 +47,10 @@ Route::get('return-policy', ['uses' => "AdminController@return", 'as' => 'return
 Route::get('privacy-policy', ['uses' => "AdminController@privacy", 'as' => 'privacy-policy']);
 Route::get('terms-conditions', ['uses' => "AdminController@terms", 'as' => 'terms-conditions']);
 
+Route::get('/boutique/AddToCart/{id}',['uses' => "ProduitsController@AddToCart", 'as' => 'AddToCart']);
 
+Route::get('cart', ['uses' => "ProduitsController@ShowCart", 'as' => 'cart']);
+
+//delete from cart
+Route::get('/boutique/deleteItemCart/{id}', ['uses' => "ProduitsController@deleteItemCart", 'as' => 'deleteItemCart']);
 

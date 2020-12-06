@@ -62,7 +62,7 @@
 								</div>
 							</div>
 							<div class="wrap-butons">
-								<a href="#" class="btn add-to-cart">Add to Cart</a>
+                            <a href="{{route('AddToCart',['id'=>$info_prod[0]['id']])}}" class="btn add-to-cart">Ajouter au Panier</a>
 							</div>
 						</div>
 						<div class="advance-info">

@@ -7,32 +7,32 @@
 						<li class="fc-info-item">
 							<i class="fa fa-truck" aria-hidden="true"></i>
 							<div class="wrap-left-info">
-								<h4 class="fc-name">Free Shipping</h4>
-								<p class="fc-desc">Free On Oder Over $99</p>
+								<h4 class="fc-name">Livraison Gratuite</h4>
+								<p class="fc-desc">Pour les Ordres au Dessus de $599</p>
 							</div>
 
 						</li>
 						<li class="fc-info-item">
 							<i class="fa fa-recycle" aria-hidden="true"></i>
 							<div class="wrap-left-info">
-								<h4 class="fc-name">Guarantee</h4>
-								<p class="fc-desc">30 Days Money Back</p>
+								<h4 class="fc-name">Garantie</h4>
+								<p class="fc-desc">30 jours de remboursement</p>
 							</div>
 
 						</li>
 						<li class="fc-info-item">
 							<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
 							<div class="wrap-left-info">
-								<h4 class="fc-name">Safe Payment</h4>
-								<p class="fc-desc">Safe your online payment</p>
+								<h4 class="fc-name">Paiement sécurisé</h4>
+								<p class="fc-desc">Sécurisez votre paiement en ligne</p>
 							</div>
 
 						</li>
 						<li class="fc-info-item">
 							<i class="fa fa-life-ring" aria-hidden="true"></i>
 							<div class="wrap-left-info">
-								<h4 class="fc-name">Online Suport</h4>
-								<p class="fc-desc">We Have Support 24/7</p>
+								<h4 class="fc-name">Support en ligne</h4>
+								<p class="fc-desc">Nous avons un support 7/24</p>
 							</div>
 
 						</li>

@@ -33,6 +33,20 @@ class ProduitsController extends Controller
         return redirect()->route('boutique');
     }
 
+
+    public function AddToCart_up(Request $request, $id)
+    {
+        //$request->session()->forget('cart');
+        //$request->session()->flush();
+        $prevCart = $request->session()->get('cart');
+        $cart = new Cart($prevCart);
+        $product = Produit::find($id);
+        $cart->AddItem($id, $product);
+        $request->session()->put('cart', $cart);
+        //dump($cart);
+        return redirect()->route('cart');
+    }
+
     public function ShowCart()
     {
         $cart = Session::get('cart');
@@ -60,6 +74,19 @@ class ProduitsController extends Controller
 
         $request->session()->put("cart",$updatedCart);
 
+        return redirect()->route('cart');
+    }
+
+    public function AddToCart_down(Request $request, $id)
+    {
+        //$request->session()->forget('cart');
+        //$request->session()->flush();
+        $prevCart = $request->session()->get('cart');
+        $cart = new Cart($prevCart);
+        $product = Produit::find($id);
+        $cart->AddItem_down($id, $product);
+        $request->session()->put('cart', $cart);
+        //dump($cart);
         return redirect()->route('cart');
     }
 

@@ -54,3 +54,15 @@ Route::get('cart', ['uses' => "ProduitsController@ShowCart", 'as' => 'cart']);
 //delete from cart
 Route::get('/boutique/deleteItemCart/{id}', ['uses' => "ProduitsController@deleteItemCart", 'as' => 'deleteItemCart']);
 
+Route::get('/boutique/AddToCart_up/{id}', ['uses' => "ProduitsController@AddToCart_up", 'as' => 'AddToCart_up']);
+
+Route::get('/boutique/AddToCart_down/{id}', ['uses' => "ProduitsController@AddToCart_down", 'as' => 'AddToCart_down']);
+
+Route::get('/caisse', function () {
+    return view('website.backend.layouts.checkout');
+});
+
+Route::get('/contact', function () {
+    return view('website.backend.layouts.contact-us');
+});
+

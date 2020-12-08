@@ -45,20 +45,20 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
+                <a href="/login/index_prod" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>ajouter produit</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="/login/index_cat" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>categorie</p>
                 </a>
               </li>
-           
-        
-         
+
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

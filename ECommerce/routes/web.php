@@ -66,3 +66,13 @@ Route::get('/contact', function () {
     return view('website.backend.layouts.contact-us');
 });
 
+Route::get('/login/index_prod', function () {
+    return view('website.backend.layouts.admin.index');
+});
+
+Route::get('/login/index_cat', function () {
+    return view('website.backend.layouts.admin.index2');
+});
+
+
+

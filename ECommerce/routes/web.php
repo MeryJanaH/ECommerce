@@ -58,3 +58,6 @@ Route::get('/boutique/AddToCart_up/{id}', ['uses' => "ProduitsController@AddToCa
 
 Route::get('/boutique/AddToCart_down/{id}', ['uses' => "ProduitsController@AddToCart_down", 'as' => 'AddToCart_down']);
 
+Route::get('/caisse', function () {
+    return view('website.backend.layouts.checkout');
+});

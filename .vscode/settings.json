@@ -5,6 +5,7 @@
         "autoload",
         "autoloader",
         "barryvdh",
+        "caisse",
         "categorie",
         "checklogin",
         "classmap",

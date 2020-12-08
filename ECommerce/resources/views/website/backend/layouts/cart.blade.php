@@ -36,7 +36,7 @@
 								<figure><img src="{{Storage::disk('local')->url('products/'.$item['data']['photo'])}}" alt=""></figure>
 							</div>
 							<div class="product-name">
-								<a class="link-to-product">{{$item['data']['nom_prod']}}</a>
+								<a href="/boutique/detail/{{$item['data']['id']}}" class="link-to-product">{{$item['data']['nom_prod']}}</a>
 							</div>
 							<div class="price-field produtc-price"><p class="price">${{$item['data']['prix']}}</p></div>
 							<div class="quantity" class="summary">
@@ -47,38 +47,33 @@
 								</div>
 							</div>
 							<div class="price-field sub-total"><p class="price">${{$item['totalSinglePrice']}}</p></div>
-                                <a href="{{route('deleteItemCart',['id'=>$item['data']['id']])}}" class="btn btn-delete" title="">
+								<div class="delete">
+							    <button  onclick="window.location.href='{{route('deleteItemCart',['id'=>$item['data']['id']])}}'" class="btn btn-delete" title="">
 									<i class="fa fa-times-circle" aria-hidden="true"></i>
-                                </a>
+								</button>
+								</div>
                         </li>
                         @endforeach
 					</ul>
 				</div>
 
-                @if($cartItems->totalPrice >= 599)
-                {{$cartItems->totalShipping = 0}}
-                @else
-                {{$cartItems->totalPrice = $cartItems->totalPrice + $cartItems->totalShipping}}
-                @endif
-
 				<div class="summary">
 					<div class="order-summary">
 						<h4 class="title-box">RÉCAPITULATIF DE LA COMMANDE</h4>
-                        <p class="summary-info"><span class="title">Subtotal</span><b class="index">${{$cartItems->totalPrice}}</b></p>
-                        @if($cartItems->totalShipping == 0)
-                        <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>
+                        @if($cartItems->totalPrice < 599)
+                        <p class="summary-info"><span class="title">Sous total</span><b class="index">${{$cartItems->totalPrice}}</b></p>
+                        <p class="summary-info"><span class="title">Livraison</span><b class="index">${{$cartItems->totalShipping}}</b></p>
+                        <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{$cartItems->totalPrice + $cartItems->totalShipping}}</b></p>
                         @else
-                        <p class="summary-info"><span class="title">Shipping</span><b class="index">${{$cartItems->totalShipping}}</b></p>
-                        @endif
+                        <p class="summary-info"><span class="title">Sous total</span><b class="index">${{$cartItems->totalPrice}}</b></p>
+                        <p class="summary-info"><span class="title">Livraison</span><b class="index">Free Shipping</b></p>
                         <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{$cartItems->totalPrice}}</b></p>
-					</div>
+                        @endif
+                    </div>
+                    &nbsp
 					<div class="checkout-info">
-						<a class="btn btn-checkout" href="checkout.html">Check out</a>
+						<a class="btn btn-checkout" href="checkout.html">Caisse</a>
 						<a class="link-to-shop" href="boutique/">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-					</div>
-					<div class="update-clear">
-						<a class="btn btn-clear" href="#">Clear Shopping Cart</a>
-						<a class="btn btn-update" href="#">Update Shopping Cart</a>
 					</div>
                 </div>
 

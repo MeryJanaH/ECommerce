@@ -55,8 +55,7 @@
                             <div class="quantity">
                             	<span>Quantité:</span>
 								<div class="quantity-input">
-									<input type="text" name="product-quatity" value="1" data-max="120" pattern="[0-9]*" >
-
+									<input type="text" name="product-quatity" value="1" data-max="{{$info_prod[0]['quantite']}}" pattern="[0-9]*" >
 									<a class="btn btn-reduce" href="#"></a>
 									<a class="btn btn-increase" href="#"></a>
 								</div>
@@ -180,7 +179,7 @@
 										<i class="fa fa-truck" aria-hidden="true"></i>
 										<div class="right-content">
 											<b class="title">Livraison Gratuite</b>
-											<span class="subtitle">Pour les Ordres au Dessus de $99</span>
+											<span class="subtitle">Pour les Ordres au Dessus de $599</span>
 										</div>
 									</a>
 								</li>

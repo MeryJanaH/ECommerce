@@ -22,12 +22,13 @@ class ProduitsController extends Controller
 
     public function AddToCart(Request $request, $id)
     {
+        $src=$request->input('qty');
         //$request->session()->forget('cart');
         //$request->session()->flush();
         $prevCart = $request -> session() ->get('cart');
         $cart = new Cart($prevCart);
         $product = Produit::find($id);
-        $cart->AddItem($id, $product);
+        $cart->AddItem($id, $product,$src);
         $request->session()->put('cart', $cart);
         //dump($cart);
         return redirect()->route('boutique');
@@ -41,7 +42,7 @@ class ProduitsController extends Controller
         $prevCart = $request->session()->get('cart');
         $cart = new Cart($prevCart);
         $product = Produit::find($id);
-        $cart->AddItem($id, $product);
+        $cart->AddItem($id, $product,1);
         $request->session()->put('cart', $cart);
         //dump($cart);
         return redirect()->route('cart');
@@ -63,6 +64,7 @@ class ProduitsController extends Controller
 
     public function deleteItemCart(Request $request,$id)
     {
+        $src = $request->input('qty');
         $cart = $request->session()->get('cart');
         if(array_key_exists($id,$cart->items)){
             unset($cart->items[$id]);
@@ -70,7 +72,7 @@ class ProduitsController extends Controller
 
         $prevCart = $request->session()->get('cart');
         $updatedCart = new Cart($prevCart);
-        $updatedCart->updatePriceQuantity();
+        $updatedCart->updatePriceQuantity($src);
 
         $request->session()->put("cart",$updatedCart);
 
@@ -85,7 +87,7 @@ class ProduitsController extends Controller
         $cart = new Cart($prevCart);
         $product = Produit::find($id);
         $cart->AddItem_down($id, $product);
-        $request->session()->put('cart', $cart);
+        $request->session()->put('cart', $cart, 1);
         //dump($cart);
         return redirect()->route('cart');
     }

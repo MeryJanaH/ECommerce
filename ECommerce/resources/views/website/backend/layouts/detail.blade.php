@@ -55,13 +55,13 @@
                             <div class="quantity">
                             	<span>Quantité:</span>
 								<div class="quantity-input">
-									<input type="text" name="product-quatity" value="1" data-max="{{$info_prod[0]['quantite']}}" pattern="[0-9]*" >
-									<a class="btn btn-reduce" href="#"></a>
-									<a class="btn btn-increase" href="#"></a>
+									<input id="qty" type="text" name="product-quatity" value="1" data-max="{{$info_prod[0]['quantite']}}" pattern="[0-9]*" >
+									<button class="btn btn-reduce" id="down"></button>
+									<button class="btn btn-increase" id="up"></button>
 								</div>
 							</div>
 							<div class="wrap-butons">
-                            <a href="{{route('AddToCart',['id'=>$info_prod[0]['id']])}}" class="btn add-to-cart">Ajouter au Panier</a>
+                            <a id="cart" href="{{route('AddToCart',['id'=>$info_prod[0]['id']])}}?qty=1" class="btn add-to-cart">Ajouter au Panier</a>
 							</div>
 						</div>
 						<div class="advance-info">
@@ -244,6 +244,26 @@
     @include('website.backend.layouts.footer')
 
     @include('website.backend.layouts.foot')
-	<!--footer area-->
+    <!--footer area-->
+    <script>
+        //unbind pour qu'on declare pas la fonction plusieurs fois
+        $('#up').unbind('click').on('click', function(e){
+            //prevent submit
+            e.preventDefault();
+            setTimeout(function(){
+                var qty = $('#qty').val();
+                //console.log(qty);
+                document.getElementById("cart").href = "{{route('AddToCart',['id'=>$info_prod[0]['id']])}}?qty="+qty;
+            },10);
+        });
+        $('#down').unbind('click').on('click', function(e){
+            e.preventDefault();
+            setTimeout(function(){
+                var qty = $('#qty').val();
+                //console.log(qty);
+                document.getElementById("cart").href = "{{route('AddToCart',['id'=>$info_prod[0]['id']])}}?qty="+qty;
+            },10);
+        });
+    </script>
 </body>
 </html>

@@ -24,23 +24,26 @@ class Cart
         }
     }
 
-    public function AddItem($id, $produit)
+    public function AddItem($id, $produit,$src)
     {
+        if($src == 0){$src = 1;}
         $price = (int) ($produit->prix);
         if($produit->shipping == "free") {$ship = 0;}
         else {$ship = $produit->shipping;}
         //item already exists
         if (array_key_exists($id, $this->items)) {
             $ProdToAdd = $this->items[$id];
-            $ProdToAdd['quantity']++;
+            $ProdToAdd['quantity']=$ProdToAdd['quantity']+$src;
             $ProdToAdd['totalSinglePrice']= $ProdToAdd['quantity'] * $price;
         } else {
-            $ProdToAdd = ['quantity' => 1, 'totalSinglePrice' => $price, 'data' => $produit];
+            $ProdToAdd = ['quantity' => $src, 'totalSinglePrice' => $src*$price, 'data' => $produit];
         }
+        $price = (int) ($produit->prix) * $src;
+
         $this->items[$id] = $ProdToAdd;
         $this->totalPrice = $this->totalPrice + $price;
-        $this->totalQuantity++;
-        $this->totalShipping = $this->totalShipping + $ship;
+        $this->totalQuantity+=$src;
+        $this->totalShipping = $this->totalShipping + $ship*$src;
     }
 
 
@@ -63,7 +66,7 @@ class Cart
         if($ProdToAdd['quantity'] == 0)
         {
             unset($this->items[$id]);
-            $this->updatePriceQuantity();
+            $this->updatePriceQuantity(1);
         }
         else
         {
@@ -75,7 +78,7 @@ class Cart
     }
 
 
-    public function updatePriceQuantity()
+    public function updatePriceQuantity($src)
     {
         $totalPrice = 0;
         $totalQuantity = 0;

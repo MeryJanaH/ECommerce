@@ -60,7 +60,7 @@
 				<div class="summary">
 					<div class="order-summary">
 						<h4 class="title-box">RÉCAPITULATIF DE LA COMMANDE</h4>
-                        @if($cartItems->totalPrice < 599)
+                        @if($cartItems->totalPrice < 599 && $cartItems->totalShipping != 0)
                         <p class="summary-info"><span class="title">Sous total</span><b class="index">${{$cartItems->totalPrice}}</b></p>
                         <p class="summary-info"><span class="title">Livraison</span><b class="index">${{$cartItems->totalShipping}}</b></p>
                         <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{$cartItems->totalPrice + $cartItems->totalShipping}}</b></p>
@@ -72,7 +72,7 @@
                     </div>
                     &nbsp
 					<div class="checkout-info">
-						<a class="btn btn-checkout" href="checkout.html">Caisse</a>
+						<a class="btn btn-checkout" href="{{ route('check')}}">Caisse</a>
 						<a class="link-to-shop" href="boutique/">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
 					</div>
                 </div>

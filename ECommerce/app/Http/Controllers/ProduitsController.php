@@ -134,6 +134,52 @@ class ProduitsController extends Controller
         return view('website.backend.layouts.detail',['info_prod' => $id_p,'rel_prod' => $id_rel]);
     }
 
+    public function createNewOrder(Request $request)
+    {
+        $cart = Session::get('cart');
+
+        $name = $request->input('fname');
+        $adresse = $request->input('add');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $zip = $request->input('zip-code');
+        $country = $request->input('country');
+        $city = $request->input('city');
+
+        //cart not empty
+        if($cart){
+            $date = date('Y-m-d H:i:s');
+            $newOrderArray = array("status"=>"on_hold","date"=>$date,"del_date"=>$date,"price"=>$cart->totalPrice,
+            "name"=>$name,"adresse"=>$adresse,"email"=>$email,"phone"=>$phone,"zip"=>$zip,"country"=>$country,"city"=>$city);
+            $created_order=DB::table("orders")->insert($newOrderArray);
+            $order_id = DB::getPdo()->lastInsertId();
+
+        foreach($cart->items as $cart_item){
+            $item_id = $cart_item['data']['id'];
+            $item_name = $cart_item['data']['nom_prod'];
+            $item_price = $cart_item['data']['prix'];
+            $newItemsInCurrentOrder = array("item_id"=>$item_id, "order_id"=>$order_id, "item_name"=>$item_name, "item_price"=>$item_price);
+            $created_order_items = DB::table("order_items")->insert($newItemsInCurrentOrder);
+        }
+
+        //delete cart
+        Session::forget("cart");
+
+        $pay_info = $newOrderArray;
+        $request->session()->put('pay_info', $pay_info);
+
+            return redirect()->route("showPaypage");
+
+        }else{
+            return redirect()->route("boutique");
+        }
+    }
+
+    public function check_order()
+    {
+        return view("website.backend.layouts.payment.checkout");
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

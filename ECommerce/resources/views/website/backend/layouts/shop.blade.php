@@ -14,6 +14,10 @@
 	<!--header-->
     @include('website.backend.layouts.header')
 
+    <div class="container">
+        @include('website.backend.layouts.alert')
+    </div>
+
 	<!--main area-->
 	<main id="main" class="main-site left-sidebar">
 

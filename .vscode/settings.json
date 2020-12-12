@@ -2,6 +2,9 @@
     "python.pythonPath": "C:\\Python39\\python.exe",
     "cSpell.words": [
         "Authenticatable",
+        "Choisir",
+        "Paypage",
+        "adresse",
         "autoload",
         "autoloader",
         "barryvdh",
@@ -20,13 +23,16 @@
         "mery",
         "newform",
         "nunomaduro",
+        "payements",
         "phpunit",
         "produit",
         "produits",
         "quantite",
+        "statut",
         "successlogin",
         "successloginadmin",
         "unguard",
-        "usertype"
+        "usertype",
+        "withsuccess"
     ]
 }

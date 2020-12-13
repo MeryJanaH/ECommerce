@@ -49,21 +49,21 @@
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
-								<h3 class="item-header">Contact Details</h3>
+								<h3 class="item-header">Détails du contact</h3>
 								<div class="item-content">
 									<div class="wrap-contact-detail">
 										<ul>
 											<li>
 												<i class="fa fa-map-marker" aria-hidden="true"></i>
-												<p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United State USA</p>
+												<p class="contact-txt">25 rue industrielle fes maroc </p>
 											</li>
 											<li>
 												<i class="fa fa-phone" aria-hidden="true"></i>
-												<p class="contact-txt">(+123) 456 789 - (+123) 666 888</p>
+												<p class="contact-txt">(+212)548756921 , (+212)697147638</p>
 											</li>
 											<li>
 												<i class="fa fa-envelope" aria-hidden="true"></i>
-												<p class="contact-txt">Contact@yourcompany.com</p>
+												<p class="contact-txt">shop.amwa@gmail.com</p>
 											</li>
 										</ul>
 									</div>
@@ -73,12 +73,12 @@
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item footer-item-second">
-								<h3 class="item-header">Sign up for newsletter</h3>
+								<h3 class="item-header">S'inscrire aux Newsletters</h3>
 								<div class="item-content">
 									<div class="wrap-newletter-footer">
 										<form action="#" class="frm-newletter" id="frm-newletter">
 											<input type="email" class="input-email" name="email" value="" placeholder="Enter your email address">
-											<button class="btn-submit">Subscribe</button>
+											<button class="btn-submit">Souscrire</button>
 										</form>
 									</div>
 								</div>
@@ -89,11 +89,11 @@
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
 							<div class="row">
 								<div class="wrap-footer-item twin-item">
-									<h3 class="item-header">My Account</h3>
+									<h3 class="item-header">Mon compte</h3>
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">My Account</a></li>
+												<li class="menu-item"><a href="#" class="link-term">Mon compte</a></li>
 											</ul>
 										</div>
 									</div>
@@ -103,8 +103,8 @@
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Order History</a></li>
+												<li class="menu-item"><a href="#" class="link-term">Contactez nous</a></li>
+												
 											</ul>
 										</div>
 									</div>
@@ -118,7 +118,7 @@
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
-								<h3 class="item-header">We Using Safe Payments:</h3>
+								<h3 class="item-header">Nous utilisons des paiements sécurisés:</h3>
 								<div class="item-content">
 									<div class="wrap-list-item wrap-gallery">
 										<img src="{{asset('assets/images/payment.png')}}" style="max-width: 260px;">
@@ -129,7 +129,7 @@
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
-								<h3 class="item-header">Social network</h3>
+								<h3 class="item-header">réseau social</h3>
 								<div class="item-content">
 									<div class="wrap-list-item social-network">
 										<ul>
@@ -159,15 +159,15 @@
 			<div class="coppy-right-box">
 				<div class="container">
 					<div class="coppy-right-item item-left">
-						<p class="coppy-right-text">Copyright © 2020 Surfside Media. All rights reserved</p>
+						<p class="coppy-right-text">Copyright © 2020 AMWA All rights reserved</p>
 					</div>
 					<div class="coppy-right-item item-right">
 						<div class="wrap-nav horizontal-nav">
 							<ul>
-								<li class="menu-item"><a href="{{route('about-us')}}" class="link-term">About us</a></li>
-								<li class="menu-item"><a href="{{route('privacy-policy')}}" class="link-term">Privacy Policy</a></li>
-								<li class="menu-item"><a href="{{route('terms-conditions')}}" class="link-term">Terms & Conditions</a></li>
-								<li class="menu-item"><a href="{{route('return-policy')}}" class="link-term">Return Policy</a></li>
+								<li class="menu-item"><a href="{{route('about-us')}}" class="link-term">À propos de nous</a></li>
+								<li class="menu-item"><a href="{{route('privacy-policy')}}" class="link-term">Politique de confidentialité</a></li>
+								<li class="menu-item"><a href="{{route('terms-conditions')}}" class="link-term">termes et conditions</a></li>
+								<li class="menu-item"><a href="{{route('return-policy')}}" class="link-term">Politique de retour</a></li>
 							</ul>
 						</div>
 					</div>

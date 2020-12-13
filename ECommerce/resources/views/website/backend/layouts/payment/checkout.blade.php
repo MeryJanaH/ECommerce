@@ -31,31 +31,31 @@
                     <form action="/createNewOrder" method="POST" name="frm-billing">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<p class="row-in-form">
-							<label for="fname">name<span>*</span></label>
+							<label for="fname">Nom<span>*</span></label>
 							<input id="fname" type="text" name="fname" value="" placeholder="Your name">
 						</p>
 						<p class="row-in-form">
-							<label for="email">Email Addreess:</label>
+							<label for="email">Adresse email:</label>
 							<input id="email" type="email" name="email" value="" placeholder="Type your email">
 						</p>
 						<p class="row-in-form">
-							<label for="phone">Phone number<span>*</span></label>
+							<label for="phone">numero de téléphone<span>*</span></label>
 							<input id="phone" type="number" name="phone" value="" placeholder="10 digits format">
 						</p>
 						<p class="row-in-form">
-							<label for="add">Address:</label>
+							<label for="add">Addresse:</label>
 							<input id="add" type="text" name="add" value="" placeholder="Street at apartment number">
 						</p>
 						<p class="row-in-form">
-							<label for="country">Country<span>*</span></label>
+							<label for="country">Pays<span>*</span></label>
 							<input id="country" type="text" name="country" value="" placeholder="United States">
 						</p>
 						<p class="row-in-form">
-							<label for="zip-code">Postcode / ZIP:</label>
+							<label for="zip-code">Code postal / ZIP:</label>
 							<input id="zip-code" type="number" name="zip-code" value="" placeholder="Your postal code">
 						</p>
 						<p class="row-in-form">
-							<label for="city">Town / City<span>*</span></label>
+							<label for="city">Ville <span>*</span></label>
 							<input id="city" type="text" name="city" value="" placeholder="City name">
                         </p>
 

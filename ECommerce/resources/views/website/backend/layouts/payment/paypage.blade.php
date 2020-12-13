@@ -28,23 +28,23 @@
 			<div class=" main-content-area">
                 <div class="summary summary-checkout">
 					<div class="summary-item payment-method">
-						<h4 class="title-box">Payment Method</h4>
+						<h4 class="title-box">MODE DE PAIEMENT</h4>
 						<div class="choose-payment-methods">
 							<label class="payment-method">
 								<input name="payment-method" id="payment-method-bank" value="bank" type="radio">
-								<span>Direct Bank Transder</span>
-								<span class="payment-desc">But the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</span>
+								<span>Virement bancaire direct</span>
+								<span class="payment-desc">Mais la majorité a subi une altération sous une forme ou une autre, par de l'humour injecté ou des mots aléatoires qui ne semblent même pas légèrement crédibles</span>
 							</label>
 							<label class="payment-method">
 								<input name="payment-method" id="payment-method-visa" value="visa" type="radio">
 								<span>visa</span>
-								<span class="payment-desc">There are many variations of passages of Lorem Ipsum available</span>
+								<span class="payment-desc">Il existe de nombreuses variantes de passages du Lorem Ipsum disponibles</span>
 							</label>
 							<label class="payment-method">
 								<input name="payment-method" id="payment-method-paypal" value="paypal" type="radio">
 								<span>Paypal</span>
-								<span class="payment-desc">You can pay with your credit</span>
-								<span class="payment-desc">card if you don't have a paypal account</span>
+								<span class="payment-desc">Vous pouvez payer avec votre carte à crédit</span>
+								<span class="payment-desc">si vous n'avez pas de compte paypal</span>
 							</label>
                         </div>
                     </br></br></br>

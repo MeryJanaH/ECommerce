@@ -66,7 +66,8 @@
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: {{$pay_info['price']}}
+            value: {{$pay_info['price']}},
+            currency: 'USD'
           }
         }]
       });

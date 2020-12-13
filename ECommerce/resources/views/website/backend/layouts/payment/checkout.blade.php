@@ -32,27 +32,27 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<p class="row-in-form">
 							<label for="fname">Nom<span>*</span></label>
-							<input id="fname" type="text" name="fname" value="" placeholder="Your name">
+							<input id="fname" type="text" name="fname" value="" placeholder="votre nom">
 						</p>
 						<p class="row-in-form">
 							<label for="email">Adresse email:</label>
-							<input id="email" type="email" name="email" value="" placeholder="Type your email">
+							<input id="email" type="email" name="email" value="" placeholder="Tapez votre email">
 						</p>
 						<p class="row-in-form">
 							<label for="phone">numero de téléphone<span>*</span></label>
-							<input id="phone" type="number" name="phone" value="" placeholder="10 digits format">
+							<input id="phone" type="number" name="phone" value="" placeholder="Format à 10 chiffres">
 						</p>
 						<p class="row-in-form">
 							<label for="add">Addresse:</label>
-							<input id="add" type="text" name="add" value="" placeholder="Street at apartment number">
+							<input id="add" type="text" name="add" value="" placeholder="Rue et numéro de l'appartement">
 						</p>
 						<p class="row-in-form">
 							<label for="country">Pays<span>*</span></label>
-							<input id="country" type="text" name="country" value="" placeholder="United States">
+							<input id="country" type="text" name="country" value="" placeholder="maroc">
 						</p>
 						<p class="row-in-form">
 							<label for="zip-code">Code postal / ZIP:</label>
-							<input id="zip-code" type="number" name="zip-code" value="" placeholder="Your postal code">
+							<input id="zip-code" type="number" name="zip-code" value="" placeholder="Votre code postal">
 						</p>
 						<p class="row-in-form">
 							<label for="city">Ville <span>*</span></label>

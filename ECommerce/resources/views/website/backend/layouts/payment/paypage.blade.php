@@ -30,11 +30,7 @@
 					<div class="summary-item payment-method">
 						<h4 class="title-box">Payment Method</h4>
 						<div class="choose-payment-methods">
-							  <script
-                                    src="https://www.paypal.com/sdk/js?client-id=AfGKpUUXTx91JusgwTm0v099gUjXWcWhaGvQukjql8hZxjh4AcKGFW7Pn5Nmkn1VIOL6ZvFw_zRdVKiV"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
-                              </script>
 
-                              <div id="paypal-button-container"></div>
                         </div>
                     </br></br></br>
                         <p class="summary-info grand-total"><span>Totale</span> <span class="grand-total-price">${{$pay_info['price']}}</span></p>
@@ -43,6 +39,12 @@
                         @else
                         <p class="summary-info grand-total"><span>Status</span> <span class="grand-total-price">Paiement accomplis</span></p>
                         @endif
+                    </br></br></br>
+                            <script
+                                src="https://www.paypal.com/sdk/js?client-id=AfGKpUUXTx91JusgwTm0v099gUjXWcWhaGvQukjql8hZxjh4AcKGFW7Pn5Nmkn1VIOL6ZvFw_zRdVKiV"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+                            </script>
+
+                            <div id="paypal-button-container"></div>
                 </div>
             </br></br></br>
 			</div><!--end main content area-->
@@ -66,7 +68,7 @@
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: {{$pay_info['price']}},
+            value: "{{$pay_info['price']}}",
             currency: 'USD'
           }
         }]
@@ -76,7 +78,9 @@
       // This function captures the funds from the transaction.
       return actions.order.capture().then(function(details) {
         // This function shows a transaction success message to your buyer.
-        alert('Transaction completed by ' + details.payer.name.given_name);
+        alert('Transaction complété par ' + details.payer.name.given_name);
+        //console.log(data);
+        window.location = 'paymentreceipt/'+data.paymentID+'/'+data.payerID;
       });
     }
   }).render('#paypal-button-container');

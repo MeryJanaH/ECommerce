@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrderItems extends Migration
+class Payments extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateOrderItems extends Migration
      */
     public function up()
     {
-        Schema::create('order_items', function (Blueprint $table) {
+        //
+        Schema::create('payments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("item_id");
             $table->integer("order_id")->nullable(false)->unsigned();
-            $table->text("item_name");
-            $table->decimal("item_price",8,2);
+            $table->unsignedBigInteger("paypal_payment_id");
+            $table->integer("paypal_payer_id");
+            $table->date("date");
+            $table->decimal("amount", 8, 2);
             $table->foreign('order_id')->references('order_id')->on('orders')->onDelete('cascade');
         });
     }
@@ -30,6 +32,7 @@ class CreateOrderItems extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_items');
+        //
+        Schema::dropIfExists('payments');
     }
 }

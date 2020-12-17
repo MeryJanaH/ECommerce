@@ -32,31 +32,31 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<p class="row-in-form">
 							<label for="fname">Nom<span>*</span></label>
-							<input id="fname" type="text" name="fname" value="" placeholder="votre nom">
+							<input id="fname" type="text" name="fname" value="" placeholder="Votre nom" required>
 						</p>
 						<p class="row-in-form">
-							<label for="email">Adresse email:</label>
-							<input id="email" type="email" name="email" value="" placeholder="Tapez votre email">
+							<label for="email">Adresse email:<span>*</span></label>
+							<input id="email" type="email" name="email" value="" placeholder="Tapez votre email" required>
 						</p>
 						<p class="row-in-form">
 							<label for="phone">numero de téléphone<span>*</span></label>
-							<input id="phone" type="number" name="phone" value="" placeholder="Format à 10 chiffres">
+							<input id="phone" type="number" name="phone" value="" placeholder="Format à 10 chiffres" required>
 						</p>
 						<p class="row-in-form">
 							<label for="add">Addresse:</label>
-							<input id="add" type="text" name="add" value="" placeholder="Rue et numéro de l'appartement">
+							<input id="add" type="text" name="add" value="" placeholder="Rue et numéro de l'appartement" required>
 						</p>
 						<p class="row-in-form">
 							<label for="country">Pays<span>*</span></label>
-							<input id="country" type="text" name="country" value="" placeholder="maroc">
+							<input id="country" type="text" name="country" value="" placeholder="maroc" required>
 						</p>
 						<p class="row-in-form">
 							<label for="zip-code">Code postal / ZIP:</label>
-							<input id="zip-code" type="number" name="zip-code" value="" placeholder="Votre code postal">
+							<input id="zip-code" type="number" name="zip-code" value="" placeholder="Votre code postal" required>
 						</p>
 						<p class="row-in-form">
 							<label for="city">Ville <span>*</span></label>
-							<input id="city" type="text" name="city" value="" placeholder="City name">
+							<input id="city" type="text" name="city" value="" placeholder="Nom de ville" required>
                         </p>
 
                      <button class="btn btn-medium" style="color:red;" type="submit" name="submit">Payer Maintenant</button>

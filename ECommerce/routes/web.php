@@ -74,11 +74,11 @@ Route::post('/createNewOrder', ['uses' => "ProduitsController@createNewOrder", '
 
 Route::get('/payment', ['uses' => "PayementsController@showPaypage", 'as' => 'showPaypage']);
 
-/*Route::get('/caisse', function () {
-    return view('website.backend.layouts.checkout');
-});*/
-
 Route::get('/cart/check', ['uses' => "ProduitsController@check_order", 'as' => 'check']);
+
+Route::get('paymentreceipt/{paymentID}/{payerID}', ["uses"=> "PayementsController@showPaymentReceipt", 'as'=>'showPaymentReceipt']);
+
+   // return view('website.backend.layouts.payment.thankyou');
 
 
 

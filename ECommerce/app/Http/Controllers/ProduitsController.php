@@ -146,10 +146,12 @@ class ProduitsController extends Controller
         $country = $request->input('country');
         $city = $request->input('city');
 
+        $total = $cart->totalPrice + $cart->totalShipping;
+
         //cart not empty
         if($cart){
             $date = date('Y-m-d H:i:s');
-            $newOrderArray = array("status"=>"on_hold","date"=>$date,"del_date"=>$date,"price"=>$cart->totalPrice,
+            $newOrderArray = array("status"=>"on_hold","date"=>$date,"del_date"=>$date,"price"=>$total,
             "name"=>$name,"adresse"=>$adresse,"email"=>$email,"phone"=>$phone,"zip"=>$zip,"country"=>$country,"city"=>$city);
             $created_order=DB::table("orders")->insert($newOrderArray);
             $order_id = DB::getPdo()->lastInsertId();
@@ -166,6 +168,7 @@ class ProduitsController extends Controller
         Session::forget("cart");
 
         $pay_info = $newOrderArray;
+        $pay_info["order_id"] = $order_id;
         $request->session()->put('pay_info', $pay_info);
 
             return redirect()->route("showPaypage");

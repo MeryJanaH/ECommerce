@@ -23,30 +23,30 @@
 					<div class="item-slide">
 						<img src="{{asset('assets/images/main-slider-1-1.jpg')}}" alt="" class="img-slide">
 						<div class="slide-info slide-1">
-							<h2 class="f-title">Kid Smart <b>Watches</b></h2>
-							<span class="subtitle">Compra todos tus productos Smart por internet.</span>
-							<p class="sale-info">Only price: <span class="price">$59.99</span></p>
-							<a href="#" class="btn-link">Shop Now</a>
+							<h2 class="f-title">Montres intelligentes pour enfants</h2>
+							<span class="subtitle">Achetez tous vos produits Smart en ligne.</span>
+							<p class="sale-info">Seul prix: <span class="price">$59.99</span></p>
+							<a href="#" class="btn-link">Achetez maintenant</a>
 						</div>
                     </div>
 
 					<div class="item-slide">
 						<img src="{{asset('assets/images/main-slider-1-2.jpg')}}" alt="" class="img-slide">
 						<div class="slide-info slide-2">
-							<h2 class="f-title">Extra 25% Off</h2>
-							<span class="f-subtitle">On online payments</span>
-							<p class="discount-code">Use Code: #FA6868</p>
-							<h4 class="s-title">Get Free</h4>
-							<p class="s-subtitle">TRansparent Bra Straps</p>
+							<h2 class="f-title">25% de réduction supplémentaire</h2>
+							<span class="f-subtitle">Sur les paiements en ligne</span>
+							<p class="discount-code">Utilisez le code: # FA6868</p>
+							<h4 class="s-title">Obtenez gratuitement</h4>
+							<p class="s-subtitle">Bretelles de soutien-gorge transparentes</p>
 						</div>
 					</div>
 					<div class="item-slide">
 						<img src="{{asset('assets/images/main-slider-1-3.jpg')}}" alt="" class="img-slide">
 						<div class="slide-info slide-3">
-							<h2 class="f-title">Great Range of <b>Exclusive Furniture Packages</b></h2>
-							<span class="f-subtitle">Exclusive Furniture Packages to Suit every need.</span>
-							<p class="sale-info">Stating at: <b class="price">$225.00</b></p>
-							<a href="#" class="btn-link">Shop Now</a>
+							<h2 class="f-title">Grande gamme de <b>Ensembles de meubles exclusifs</b></h2>
+							<span class="f-subtitle">Ensembles de meubles exclusifs pour répondre à tous les besoins.</span>
+							<p class="sale-info">À partir de: <b class="price">$225.00</b></p>
+							<a href="#" class="btn-link">Achetez maintenant</a>
 						</div>
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 
 			<!--On Sale-->
 			<div class="wrap-show-advance-info-box style-1 has-countdown">
-				<h3 class="title-box">On Sale</h3>
+				<h3 class="title-box">en vente</h3>
 				<div class="wrap-countdown mercado-countdown" data-expire="2020/12/12 12:34:56"></div>
 				<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 
@@ -66,10 +66,10 @@
 								<figure><img src="{{asset('assets/images/products/tools_equipment_7.jpg')}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 							</a>
 							<div class="group-flash">
-								<span class="flash-item sale-label">sale</span>
+								<span class="flash-item sale-label">vente</span>
 							</div>
 							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
+								<a href="#" class="function-link">aperçu rapide</a>
 							</div>
 						</div>
 						<div class="product-info">
@@ -84,10 +84,10 @@
 								<figure><img src="{{asset('assets/images/products/digital_18.jpg')}}" width="800" height="800" alt=""></figure>
 							</a>
 							<div class="group-flash">
-								<span class="flash-item sale-label">sale</span>
+								<span class="flash-item sale-label">vente</span>
 							</div>
 							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
+								<a href="#" class="function-link">aperçu rapide</a>
 							</div>
 						</div>
 						<div class="product-info">
@@ -102,10 +102,10 @@
 								<figure><img src="assets/images/products/fashion_08.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 							</a>
 							<div class="group-flash">
-								<span class="flash-item sale-label">sale</span>
+								<span class="flash-item sale-label">vente</span>
 							</div>
 							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
+								<a href="#" class="function-link">aperçu rapide</a>
 							</div>
 						</div>
 						<div class="product-info">
@@ -120,10 +120,10 @@
 								<figure><img src="assets/images/products/digital_17.jpg" width="800" height="800" alt=""></figure>
 							</a>
 							<div class="group-flash">
-								<span class="flash-item sale-label">sale</span>
+								<span class="flash-item sale-label">vente</span>
 							</div>
 							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
+								<a href="#" class="function-link">aperçu rapide</a>
 							</div>
 						</div>
 						<div class="product-info">
@@ -138,10 +138,10 @@
 								<figure><img src="assets/images/products/tools_equipment_3.jpg" width="800" height="800" alt=""></figure>
 							</a>
 							<div class="group-flash">
-								<span class="flash-item sale-label">sale</span>
+								<span class="flash-item sale-label">vente</span>
 							</div>
 							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
+								<a href="#" class="function-link">aperçu rapide</a>
 							</div>
 						</div>
 						<div class="product-info">
@@ -156,10 +156,10 @@
 								<figure><img src="assets/images/products/fashion_05.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 							</a>
 							<div class="group-flash">
-								<span class="flash-item sale-label">sale</span>
+								<span class="flash-item sale-label">vente</span>
 							</div>
 							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
+								<a href="#" class="function-link">aperçu rapide</a>
 							</div>
 						</div>
 						<div class="product-info">
@@ -174,10 +174,10 @@
 								<figure><img src="assets/images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 							</a>
 							<div class="group-flash">
-								<span class="flash-item sale-label">sale</span>
+								<span class="flash-item sale-label">vente</span>
 							</div>
 							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
+								<a href="#" class="function-link">aperçu rapide</a>
 							</div>
 						</div>
 						<div class="product-info">
@@ -192,10 +192,10 @@
 								<figure><img src="assets/images/products/kidtoy_05.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 							</a>
 							<div class="group-flash">
-								<span class="flash-item sale-label">sale</span>
+								<span class="flash-item sale-label">vente</span>
 							</div>
 							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
+								<a href="#" class="function-link">aperçu rapide</a>
 							</div>
 						</div>
 						<div class="product-info">
@@ -209,7 +209,7 @@
 
 			<!--Latest Products-->
 			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Latest Products</h3>
+				<h3 class="title-box">derniers produits</h3>
 				<div class="wrap-top-banner">
 					<a href="#" class="link-banner banner-effect-2">
 						<figure><img src="assets/images/digital-electronic-banner.jpg" width="1170" height="240" alt=""></figure>
@@ -219,44 +219,49 @@
 					<div class="wrap-product-tab tab-style-1">
 						<div class="tab-contents">
 							<div class="tab-content-item active" id="digital_1a">
+							
 								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}' >
-
+								@foreach ($data as $product)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="assets/images/products/digital_04.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-											</a>
+										
+										<a href="#" class="product-name"><span>{{$product->nom_prod}}</span></a>
+                                                <div class="wrap-price"><span class="product-price">{{$product->getPriceAttribute($product->prix)}}</span></div>
+												<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" width="800" height="800" alt=""></figure>
+                                                </a>
 											<div class="group-flash">
-												<span class="flash-item new-label">new</span>
+												<span class="flash-item new-label">nouveau</span>
 											</div>
 											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
+												<a href="#" class="function-link">aperçu rapide</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-											<div class="wrap-price"><span class="product-price">$250.00</span></div>
+										<a href="#" class="product-name"><span>{{$product->nom_prod}}</span></a>
+                                                <div class="wrap-price"><span class="product-price">{{$product->getPriceAttribute($product->prix)}}</span></div>
 										</div>
 									</div>
-
+									@endforeach
+									@foreach ($data as $product)
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
-											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-												<figure><img src="assets/images/products/digital_17.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-											</a>
+										<a href="#" class="product-name"><span>{{$product->nom_prod}}</span></a>
+                                                <div class="wrap-price"><span class="product-price">{{$product->getPriceAttribute($product->prix)}}</span></div>
+												<figure><img src="{{Storage::disk('local')->url('products/'.$product->photo)}}" width="800" height="800" alt=""></figure>
+                                                </a>
 											<div class="group-flash">
-												<span class="flash-item sale-label">sale</span>
+												<span class="flash-item sale-label">vente</span>
 											</div>
 											<div class="wrap-btn">
-												<a href="#" class="function-link">quick view</a>
+												<a href="#" class="function-link">aperçu rapide</a>
 											</div>
 										</div>
 										<div class="product-info">
-											<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-											<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+										<a href="#" class="product-name"><span>{{$product->nom_prod}}</span></a>
+                                                <div class="wrap-price"><span class="product-price">{{$product->getPriceAttribute($product->prix)}}</span></div>
 										</div>
 									</div>
-
+                                 @endforeach
 									<div class="product product-style-2 equal-elem ">
 										<div class="product-thumnail">
 											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
@@ -315,7 +320,7 @@
 												<figure><img src="assets/images/products/digital_03.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 											</a>
 											<div class="group-flash">
-												<span class="flash-item sale-label">sale</span>
+												<span class="flash-item sale-label">vente</span>
 											</div>
 											<div class="wrap-btn">
 												<a href="#" class="function-link">quick view</a>
@@ -375,7 +380,8 @@
 				<h3 class="title-box">Product Categories</h3>
 				<div class="wrap-top-banner">
 					<a href="#" class="link-banner banner-effect-2">
-						<figure><img src="assets/images/fashion-accesories-banner.jpg" width="1170" height="240" alt=""></figure>
+					<figure><img src="{{Storage::disk('local')->url('/fashion-accesories-banner.jpg')}}" width="1170" height="240" alt=""></figure>
+						
 					</a>
 				</div>
 				<div class="wrap-products">

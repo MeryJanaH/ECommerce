@@ -22,7 +22,7 @@
 			<div class="wrap-breadcrumb">
 				<ul>
 					<li class="item-link"><a href="#" class="link">home</a></li>
-					<li class="item-link"><span>Contact us</span></li>
+					<li class="item-link"><span>Contacter nous</span></li>
 				</ul>
 			</div>
 			<div class="row">
@@ -30,23 +30,38 @@
 					<div class="wrap-contacts ">
 						<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 							<div class="contact-box contact-form">
-								<h2 class="box-title">Leave a Message</h2>
-								<form action="#" method="get" name="frm-contact">
+                                <h2 class="box-title">Laisser un message</h2>
+                                @if(count($errors) > 0)
+                                   <div class="alert alert-danger">
+                                    <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                    </ul>
+                                   </div>
+                                @endif
 
-									<label for="name">Name<span>*</span></label>
-									<input type="text" value="" id="name" name="name" >
+                                @if ($message = Session::get('success'))
+                                   <div class="alert alert-success alert-block">
+                                   <strong>{{ $message }}</strong>
+                                   </div> 
+                                @endif 
+								<form action="{{url('sendEmail/send')}}" method="Post" name="frm-contact">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+									<label for="name">Nom et Prénom<span>*</span></label>
+									<input type="text" value="" id="name" name="name">
 
 									<label for="email">Email<span>*</span></label>
-									<input type="text" value="" id="email" name="email" >
+									<input type="text" value="" id="email" name="email">
 
-									<label for="phone">Number Phone</label>
-									<input type="text" value="" id="phone" name="phone" >
+									<label for="phone">Numéro de téléphone</label>
+									<input type="text" value="" id="phone" name="phone">
 
-									<label for="comment">Comment</label>
+									<label for="comment">Commentaire<span>*</span></label>
 									<textarea name="comment" id="comment"></textarea>
 
-									<input type="submit" name="ok" value="Submit" >
-
+									<input type="submit" name="ok" value="Envoyer" >
 								</form>
 							</div>
 						</div>

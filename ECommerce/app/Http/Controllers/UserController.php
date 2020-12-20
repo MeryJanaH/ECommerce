@@ -45,11 +45,6 @@ class UserController extends Controller
        // return view('website.backend.layouts.main');
     }
 
-    public function contact()
-    {
-        return view('website.backend.layouts.contact-us');
-    }
-
     public function successloginadmin()
     {
         return view('website.backend.layouts.admin.dash');

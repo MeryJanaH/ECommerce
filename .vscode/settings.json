@@ -1,12 +1,14 @@
 {
     "python.pythonPath": "C:\\Python39\\python.exe",
     "cSpell.words": [
+        "AMWA",
         "Authenticatable",
         "CURLOPT",
         "Choisir",
         "HTTPHEADER",
         "POSTFIELDS",
         "Paypage",
+        "Queueable",
         "RETURNTRANSFER",
         "USERPWD",
         "VERIFYPEER",
@@ -18,6 +20,7 @@
         "categorie",
         "checklogin",
         "classmap",
+        "contacter",
         "debugbar",
         "dont",
         "fakerphp",

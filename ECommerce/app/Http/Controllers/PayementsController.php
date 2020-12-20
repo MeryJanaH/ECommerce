@@ -160,7 +160,7 @@ class PayementsController extends Controller
         if($status == "on_hold")
         {
             $date = date("Y-m-d H:i:s");
-            $newPaymentArray = array("order_id"=>$order_id,"date"=>$date,"amount"=>$payment_info['price'],"paypal_payment_id"=> $paypalPaymentId,"paypal_payer_id"=>$paypal_payer_id);
+            $newPaymentArray = array("order_id"=>$order_id,"date"=>$date,"amount"=>$payment_info['price'],"paypal_payment_id"=> $paypal_payment_id,"paypal_payer_id"=>$paypal_payer_id);
             $created_order = DB::table("payments")->insert($newPaymentArray);
 
             //update payment status

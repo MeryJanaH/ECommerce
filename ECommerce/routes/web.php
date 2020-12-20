@@ -78,4 +78,6 @@ Route::get('paymentreceipt/{paymentID}/{payerID}', ["uses"=> "PayementsControlle
 // return view('website.backend.layouts.payment.thankyou');
 
 
-Route::get('/contact', ['uses' => "UserController@contact", 'as' => 'contact']);
+Route::get('/contact', ['uses' => "SendEmailController@contact", 'as' => 'contact']);
+Route::post('sendEmail/send', "SendEmailController@sendEmail");
+

@@ -16,7 +16,7 @@
                                 @endif
 
                                 @if($message = Session::get('error'))
-                                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">*</button>
+                                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
                                    <strong>{{$message}}</strong>
                                 @endif
                                 @if(count($errors) > 0)

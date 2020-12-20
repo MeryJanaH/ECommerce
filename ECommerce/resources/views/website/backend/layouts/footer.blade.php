@@ -63,7 +63,7 @@
 											</li>
 											<li>
 												<i class="fa fa-envelope" aria-hidden="true"></i>
-												<p class="contact-txt">shop.amwa@gmail.com</p>
+												<p class="contact-txt">Amwa.2020.2021@gmail.com</p>
 											</li>
 										</ul>
 									</div>
@@ -88,7 +88,7 @@
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">Contactez nous</a></li>
+												<li class="menu-item"><a href="{{url('contact')}}" class="link-term">Contactez nous</a></li>
 
 											</ul>
 										</div>

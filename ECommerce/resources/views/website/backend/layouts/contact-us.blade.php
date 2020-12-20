@@ -60,12 +60,12 @@
 										 data-map-style="2"
 										 data-saturation="-100"
 										 data-modify-coloring="false"
-										 data-title_maps="Kute themes"
-										 data-phone="088-465 9965 02"
-										 data-email="kutethemes@gmail.com"
-										 data-address="Z115 TP. Thai Nguyen"
-										 data-longitude="-0.120850"
-										 data-latitude="51.508742"
+										 data-title_maps="AMWA"
+										 data-phone="(+212)697147638"
+										 data-email="Amwa.2020.2021@gmail.com"
+										 data-address="AMWA, Fès"
+										 data-longitude="-4.991000"
+										 data-latitude="33.996318"
 										 data-pin-icon=""
 										 data-zoom="16"
 										 data-map-type="ROADMAP"
@@ -79,23 +79,23 @@
 										<i class="fa fa-envelope" aria-hidden="true"></i>
 										<div class="right-info">
 											<b>Email</b>
-											<p>Support1@Mercado.com</p>
+											<p>Amwa.2020.2021@gmail.com</p>
 										</div>
 									</div>
 
 									<div class="icon-box-item">
 										<i class="fa fa-phone" aria-hidden="true"></i>
 										<div class="right-info">
-											<b>Phone</b>
-											<p>0123-465-789-111</p>
+											<b>Télé</b>
+											<p>(+212)548756921 , (+212)697147638</p>
 										</div>
 									</div>
 
 									<div class="icon-box-item">
 										<i class="fa fa-map-marker" aria-hidden="true"></i>
 										<div class="right-info">
-											<b>Mail Office</b>
-											<p>Sed ut perspiciatis unde omnis<br />Street Name, Los Angeles</p>
+											<b>Office</b>
+											<p>AMWA<br />Près de ENSAF</p>
 										</div>
                                     </div>
 								</div>

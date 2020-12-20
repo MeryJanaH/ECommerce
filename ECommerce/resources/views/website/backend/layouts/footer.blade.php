@@ -103,7 +103,7 @@
 								<div class="item-content">
 									<div class="wrap-list-item social-network">
                                     <ul>
-                                        <li><a href="#" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{url('https://www.facebook.com/AMWA-104433751565897t')}}" target="_blank" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                         <li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 									</ul>
 									</div>

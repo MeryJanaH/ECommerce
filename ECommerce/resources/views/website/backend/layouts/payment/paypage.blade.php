@@ -30,7 +30,6 @@
 					<div class="summary-item payment-method">
 						<h4 class="title-box">MODE DE PAIEMENT</h4>
 						<div class="choose-payment-methods">
-<<<<<<< HEAD
 							<label class="payment-method">
 								<input name="payment-method" id="payment-method-bank" value="bank" type="radio">
 								<span>Virement bancaire direct</span>
@@ -47,9 +46,6 @@
 								<span class="payment-desc">Vous pouvez payer avec votre carte à crédit</span>
 								<span class="payment-desc">si vous n'avez pas de compte paypal</span>
 							</label>
-=======
-
->>>>>>> 700bb2f98a89abe855708489a307ea69b4a7834d
                         </div>
                     </br></br></br>
                         <p class="summary-info grand-total"><span>Totale</span> <span class="grand-total-price">${{$pay_info['price']}}</span></p>

@@ -123,10 +123,10 @@ class ProduitsController extends Controller
     public function show(string $nom)
     {
         $tmp = \App\Models\Categorie::where('nom', $nom)->get();
-        $prod_cat = \App\Models\Produit::where('cat_id', $tmp[0]['id'])->paginate(12);
+        $prod_cat = \App\Models\Produit::where('cat_id', $tmp[0]['id'])->paginate(9);
         $data_cat = \App\Models\Categorie::all();
 
-        return view('website.backend.layouts.shop', ['prod_cat' => $prod_cat, 'data_cat' => $data_cat, 'nom_cat' => $nom]);
+        return view('website.backend.layouts.shop', ['prod_cat' => $prod_cat, compact('prod_cat'), 'data_cat' => $data_cat, 'nom_cat' => $nom]);
     }
     public function detail($id)
     {

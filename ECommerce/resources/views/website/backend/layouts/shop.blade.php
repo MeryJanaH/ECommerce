@@ -81,7 +81,9 @@
                     </div>
 
                         <div class="wrap-pagination-info">
+                            <ul class="page-numbers">
                             {{$prod_cat->links()}}
+                            </ul>
                         </div>
 
 				</div><!--end main products area-->

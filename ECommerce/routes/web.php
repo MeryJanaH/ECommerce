@@ -58,9 +58,6 @@ Route::get('/boutique/AddToCart_up/{id}', ['uses' => "ProduitsController@AddToCa
 
 Route::get('/boutique/AddToCart_down/{id}', ['uses' => "ProduitsController@AddToCart_down", 'as' => 'AddToCart_down']);
 
-Route::get('/contact', function () {
-    return view('website.backend.layouts.contact-us');
-});
 
 Route::get('/login/index_prod', function () {
     return view('website.backend.layouts.admin.index');
@@ -78,7 +75,7 @@ Route::get('/cart/check', ['uses' => "ProduitsController@check_order", 'as' => '
 
 Route::get('paymentreceipt/{paymentID}/{payerID}', ["uses"=> "PayementsController@showPaymentReceipt", 'as'=>'showPaymentReceipt']);
 
-   // return view('website.backend.layouts.payment.thankyou');
+// return view('website.backend.layouts.payment.thankyou');
 
 
-
+Route::get('/contact', ['uses' => "UserController@contact", 'as' => 'contact']);

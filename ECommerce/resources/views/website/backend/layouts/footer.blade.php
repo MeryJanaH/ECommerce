@@ -71,21 +71,6 @@
 							</div>
 						</div>
 
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-							<div class="wrap-footer-item footer-item-second">
-								<h3 class="item-header">S'inscrire aux Newsletters</h3>
-								<div class="item-content">
-									<div class="wrap-newletter-footer">
-										<form action="#" class="frm-newletter" id="frm-newletter">
-											<input type="email" class="input-email" name="email" value="" placeholder="Enter your email address">
-											<button class="btn-submit">Souscrire</button>
-										</form>
-									</div>
-								</div>
-							</div>
-
-						</div>
-
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
 							<div class="row">
 								<div class="wrap-footer-item twin-item">
@@ -104,57 +89,33 @@
 										<div class="wrap-vertical-nav">
 											<ul>
 												<li class="menu-item"><a href="#" class="link-term">Contactez nous</a></li>
-												
+
 											</ul>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-
-					</div>
-
-					<div class="row">
-
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-							<div class="wrap-footer-item">
-								<h3 class="item-header">Nous utilisons des paiements sécurisés:</h3>
-								<div class="item-content">
-									<div class="wrap-list-item wrap-gallery">
-										<img src="{{asset('assets/images/payment.png')}}" style="max-width: 260px;">
-									</div>
-								</div>
-							</div>
-						</div>
+                        </div>
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
 								<h3 class="item-header">réseau social</h3>
 								<div class="item-content">
 									<div class="wrap-list-item social-network">
-										<ul>
-											<li><a href="#" class="link-to-item" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-										</ul>
+                                    <ul>
+                                        <li><a href="#" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+									</ul>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="wrap-back-link">
-					<div class="container">
-						<div class="back-link-box">
-
-						</div>
 					</div>
 				</div>
+            </div>
 
-			</div>
+        </br></br></br>
 
 			<div class="coppy-right-box">
 				<div class="container">

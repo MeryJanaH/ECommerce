@@ -7,3 +7,6 @@
 	<script src="{{asset('assets/js/jquery.countdown.min.js')}}"></script>
 	<script src="{{asset('assets/js/jquery.sticky.js')}}"></script>
 	<script src="{{asset('assets/js/functions.js')}}"></script>
+
+<!--chat-->
+    <script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(145679)</script>

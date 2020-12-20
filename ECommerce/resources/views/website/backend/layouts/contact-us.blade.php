@@ -98,10 +98,6 @@
 											<p>Sed ut perspiciatis unde omnis<br />Street Name, Los Angeles</p>
 										</div>
                                     </div>
-            <button onclick="window.location.href='https://webchat.snatchbot.me/52c692d314bd7ed24f1b58b1f1d0fb43ba8b19568e367169853a3687476d4c21'">Support en ligne</button>
-                                    <div>
-                                    </div>
-
 								</div>
 							</div>
 						</div>

@@ -17,7 +17,8 @@ class ProduitsController extends Controller
     public function index()
     {
       $data = Produit::all();
-      return view('website.backend.layouts.main', ['data'=>$data]);
+      $new = Produit::all()->take(10);
+      return view('website.backend.layouts.main', ['data'=>$data],['new'=>$new]);
     }
 
     public function AddToCart(Request $request, $id)

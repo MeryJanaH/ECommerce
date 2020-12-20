@@ -95,7 +95,7 @@
         // This function shows a transaction success message to your buyer.
         alert('Transaction complété par ' + details.payer.name.given_name);
         //console.log(data);
-        window.location = 'paymentreceipt/'+data.paymentID+'/'+data.payerID;
+        window.location = 'paymentreceipt/'+data.payerID;
       });
     }
   }).render('#paypal-button-container');

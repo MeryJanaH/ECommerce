@@ -104,7 +104,7 @@ class PayementsController extends Controller
         //
     }
 
-    public function validate_payment($paypalPaymentId, $paypalPayerId)
+    public function validate_payment($paypalPayerId)
     {
         $paypalEnv = 'sandbox';
         $paypalURL = 'https://api.sandbox.paypal.com/v1/';
@@ -149,18 +149,17 @@ class PayementsController extends Controller
     }
 
 
-    public function storePaymentInfo($paypalPaymentId, $paypalPayerId)
+    public function storePaymentInfo($paypalPayerId)
     {
         $payment_info = Session::get('pay_info');
         $order_id = $payment_info['order_id'];
         $status = $payment_info['status'];
-        $paypal_payment_id = $paypalPaymentId;
         $paypal_payer_id = $paypalPayerId;
 
         if($status == "on_hold")
         {
             $date = date("Y-m-d H:i:s");
-            $newPaymentArray = array("order_id"=>$order_id,"date"=>$date,"amount"=>$payment_info['price'],"paypal_payment_id"=> $paypal_payment_id,"paypal_payer_id"=>$paypal_payer_id);
+            $newPaymentArray = array("order_id"=>$order_id,"date"=>$date,"amount"=>$payment_info['price'],"paypal_payer_id"=>$paypal_payer_id);
             $created_order = DB::table("payments")->insert($newPaymentArray);
 
             //update payment status
@@ -168,21 +167,20 @@ class PayementsController extends Controller
         }
     }
 
-    public function showPaymentReceipt($paypalPaymentId,$paypalPayerId)
+    public function showPaymentReceipt($paypalPayerId)
     {
-        if(!empty($paypalPaymentId) && !empty($paypalPayerId))
+        if(!empty($paypalPayerId))
         {
             //return json -> contains transaction status
-            $this -> validate_payment($paypalPaymentId, $paypalPayerId);
-            $this -> storePaymentInfo($paypalPaymentId, $paypalPayerId);
+            $this -> validate_payment($paypalPayerId);
+            $this -> storePaymentInfo($paypalPayerId);
 
-            $payment_receipt = Session::get('payment_info');
-            $payment_receipt['paypal_payment_id'] = $paypalPaymentId;
+            $payment_receipt = Session::get('pay_info');
             $payment_receipt['paypal_payer_id'] = $paypalPayerId;
 
             //delete payment_info from sessions
-            Session::forget("payment_info");
-            return view('payment.paymentreceipt',['payment_receipt'=> $payment_receipt]);
+            Session::forget("pay_info");
+            return view('website.backend.layouts.payment.thankyou',['payment_receipt'=> $payment_receipt]);
         }
         else
         {

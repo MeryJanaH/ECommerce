@@ -73,7 +73,7 @@ Route::get('/payment', ['uses' => "PayementsController@showPaypage", 'as' => 'sh
 
 Route::get('/cart/check', ['uses' => "ProduitsController@check_order", 'as' => 'check']);
 
-Route::get('paymentreceipt/{paymentID}/{payerID}', ["uses"=> "PayementsController@showPaymentReceipt", 'as'=>'showPaymentReceipt']);
+Route::get('paymentreceipt/{payerID}', ["uses"=> "PayementsController@showPaymentReceipt", 'as'=>'showPaymentReceipt']);
 
 // return view('website.backend.layouts.payment.thankyou');
 

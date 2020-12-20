@@ -21,8 +21,8 @@
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="#" class="link">home</a></li>
-					<li class="item-link"><span>Thank You</span></li>
+					<li class="item-link"><a class="link">home</a></li>
+					<li class="item-link"><span>Merci de nos choisir</span></li>
 				</ul>
 			</div>
 		</div>
@@ -31,10 +31,9 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<ul>
-                        <li>Order ID<span>{{$payment_receipt['order_id']}}</span></li>
-                        <li>Payer ID<span>{{$payment_receipt['paypal_payer_id']}}</span></li>
-                        <li>Payment ID<span>{{$payment_receipt['paypal_payment_id']}}</span></li>
-                        <li>Totale ID<span>{{$payment_receipt['price']}}</span></li>
+                        <li  class="category-item has-child-cate">Order ID  : <span>{{$payment_receipt['order_id']}}</span></li>
+                        <li  class="category-item has-child-cate">Payer ID  : <span>{{$payment_receipt['paypal_payer_id']}}</span></li>
+                        <li  class="category-item has-child-cate">Totale ID : <span>{{$payment_receipt['price']}}$</span></li>
                     </ul>
 
                     <a href="{{route('boutique')}}" class="btn btn-submit btn-submitx">Continue Shopping</a>

@@ -1,1 +1,1 @@
-<p><?php $this->data['name'] ?></p>
+<p><?php echo $data['name'] ?></p>

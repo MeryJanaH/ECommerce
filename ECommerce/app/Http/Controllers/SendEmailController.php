@@ -27,19 +27,7 @@ class SendEmailController extends Controller
             'comment' => $request->comment
         ];
 
-        $to = 'testmerytest123@gmail.com';
-        $subject = 'AMWA';
-        $message = $data['name'] ." à un message : \n".$data['comment'];
-        $headers = 'From: ' . $data['email'] . "\r\n";
-        $headers .= 'X-Mailer: PHP/' . phpversion();
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-
-        if (mail($to, $subject, $message, $headers))
-            return back()->with('success', 'Merci de nous contacter!');
-        else
-            return "Erreur d'envoie de message";
-
-
+        Mail::to('admin@amwa.okdrive.ml')->send(new SendMail($data));
+        return back()->with('success', 'Merci de nous contacter!');
     }
 }

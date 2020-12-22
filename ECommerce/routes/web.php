@@ -79,6 +79,5 @@ Route::get('paymentreceipt/{payerID}', ["uses"=> "PayementsController@showPaymen
 
 
 Route::get('/contact', ['uses' => "SendEmailController@contact", 'as' => 'contact']);
-
 Route::post('sendEmail/send', "SendEmailController@sendEmail");
 

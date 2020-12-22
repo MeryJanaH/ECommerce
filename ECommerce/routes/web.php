@@ -58,15 +58,6 @@ Route::get('/boutique/AddToCart_up/{id}', ['uses' => "ProduitsController@AddToCa
 
 Route::get('/boutique/AddToCart_down/{id}', ['uses' => "ProduitsController@AddToCart_down", 'as' => 'AddToCart_down']);
 
-
-Route::get('/login/index_prod', function () {
-    return view('website.backend.layouts.admin.index');
-});
-
-Route::get('/login/index_cat', function () {
-    return view('website.backend.layouts.admin.index2');
-});
-
 Route::post('/createNewOrder', ['uses' => "ProduitsController@createNewOrder", 'as' => 'createNewOrder']);
 
 Route::get('/payment', ['uses' => "PayementsController@showPaypage", 'as' => 'showPaypage']);

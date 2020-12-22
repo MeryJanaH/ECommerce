@@ -13,8 +13,6 @@ class SendEmailController extends Controller
         return view('website.backend.layouts.contact-us');
     }
 
-
-
     public function sendEmail(Request $request){
         $this->validate($request,[
             'name' => 'required',
@@ -29,7 +27,14 @@ class SendEmailController extends Controller
             'comment' => $request->comment
         ];
 
-        Mail::to('testmerytest123@gmail.com')->send(new SendMail($data));
+        $to = 'testmerytest123@gmail.com';
+        $subject = 'AMWA';
+        $message = $data['name'];
+        $headers = 'From: ' . $data['email'] . "\r\n";
+        $headers .= 'X-Mailer: PHP/' . phpversion();
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+
         return back()->with('success', 'Merci de nous contacter!');
     }
 }

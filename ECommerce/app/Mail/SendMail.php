@@ -31,6 +31,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('AMWA')->view('website.backend.layouts.contact-us');
+        return $this->subject('AMWA')->from($this->data['email'])->view('website.backend.layouts.users.info_mssg');
     }
 }

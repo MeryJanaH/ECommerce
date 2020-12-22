@@ -2,7 +2,7 @@
     'use strict';
     if ( $('.mercado-google-maps').length == 1) {
         var wfm  = document.createElement('script');
-        wfm.src  = 'http://maps.googleapis.com/maps/api/js?key=AIzaSyBpXkIHekTsMPHuS_yuG1cIK0j5TvVjFkE';
+        wfm.src  = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBpXkIHekTsMPHuS_yuG1cIK0j5TvVjFkE';
         wfm.type = 'text/javascript';
         var sm   = document.getElementsByTagName('script')[ 0 ];
         sm.parentNode.insertBefore(wfm, sm);
@@ -357,7 +357,7 @@
 	                    _this.addClass('active');
 	                    _this.parents().siblings('.tab-contents').find('.active').removeClass('active');
 	                    _this.parents().siblings('.tab-contents').find(_this.attr('href')).addClass('active');
-                    }  
+                    }
                 });
             }
 

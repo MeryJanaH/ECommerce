@@ -29,12 +29,17 @@ class SendEmailController extends Controller
 
         $to = 'testmerytest123@gmail.com';
         $subject = 'AMWA';
-        $message = $data['name'];
+        $message = $data['name'] ." à un message : \n".$data['comment'];
         $headers = 'From: ' . $data['email'] . "\r\n";
         $headers .= 'X-Mailer: PHP/' . phpversion();
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 
-        return back()->with('success', 'Merci de nous contacter!');
+        if (mail($to, $subject, $message, $headers))
+            return back()->with('success', 'Merci de nous contacter!');
+        else
+            return "Erreur d'envoie de message";
+
+
     }
 }

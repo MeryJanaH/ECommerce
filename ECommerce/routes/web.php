@@ -72,3 +72,12 @@ Route::get('paymentreceipt/{payerID}', ["uses"=> "PayementsController@showPaymen
 Route::get('/contact', ['uses' => "SendEmailController@contact", 'as' => 'contact']);
 Route::post('sendEmail/send', "SendEmailController@sendEmail");
 
+Route::get('admin/add_prod', function () {
+    return view('website.backend.layouts.admin.admin_prod');
+});
+
+Route::get('admin/add_cat', function () {
+    return view('website.backend.layouts.admin.admin_cat');
+});
+
+Route::post('ajout_cat/', "ProduitsController@ajout_cat");

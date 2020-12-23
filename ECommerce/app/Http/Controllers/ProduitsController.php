@@ -217,4 +217,10 @@ class ProduitsController extends Controller
     {
         //
     }
+
+    public function ajout_cat(Request $request)
+    {
+        DB::insert("insert into categories (nom) values ('$request->cat')");
+        return view("website.backend.layouts.admin.admin_cat");
+    }
 }

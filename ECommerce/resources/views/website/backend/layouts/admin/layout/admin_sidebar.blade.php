@@ -23,20 +23,17 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/login/index_prod" class="nav-link">
+                <a href="{{url('admin/add_prod')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>ajouter produit</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/login/index_cat" class="nav-link">
+                <a href="{{url('admin/add_cat')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>categorie</p>
                 </a>
               </li>
-
-
-
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

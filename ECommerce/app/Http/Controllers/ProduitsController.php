@@ -218,9 +218,30 @@ class ProduitsController extends Controller
         //
     }
 
-    public function ajout_cat(Request $request)
+    public function ajout_prod(Request $request)
     {
-        DB::insert("insert into categories (nom) values ('$request->cat')");
-        return view("website.backend.layouts.admin.admin_cat");
+        if($request->hasfile('photo')){
+            $file = $request -> file('photo');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('assets/images/products',$filename);
+            $request->photo = $filename;
+        }
+        else
+        {
+            return $request;
+            $request->photo  = '';
+        }
+
+        $quant = $request->input('quant');
+        $prod = $request->input('prod');
+        $desc = $request->input('desc');
+        $prix = $request->input('prix');
+        $catg = $request->input('catg');
+        $liv = $request->input('liv');
+
+        DB::insert("insert into produits (quantite,nom_prod,photo,description,prix,shipping,cat_id) values ($quant,'$prod','$request->photo','$desc',$prix,'$liv',$catg)");
+
+        return view("website.backend.layouts.admin.admin_prod");
     }
 }

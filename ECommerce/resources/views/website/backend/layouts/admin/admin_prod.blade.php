@@ -33,35 +33,45 @@
                         <div class="panel-heading">
                         </div>
                         <div class="panel-body">
-                           <form class="col-sm-6">
+                           <form action="/ajout_prod" method="POST" class="col-sm-6" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                               <div class="form-group">
                                  <label>Nom du Produit</label>
-                                 <input type="text" class="form-control" placeholder="Nom du Produit" required>
+                                 <input name="prod" type="text" class="form-control" placeholder="Nom du Produit" required>
                               </div>
                               <div class="form-group">
                                  <label>Description du Produit</label>
-                                 <input type="text" class="form-control" placeholder="Description du Produit" required>
+                                 <input name="desc" type="text" class="form-control" placeholder="Description du Produit" required>
                               </div>
                               <div class="form-group">
                                  <label>Livraison</label>
-                                 <input type="text" class="form-control" placeholder="Livraison" required>
+                                 <input name="liv" type="text" class="form-control" placeholder="Livraison" required>
                               </div>
+
+                             <input type="hidden" {{$data_cat = \App\Models\Categorie::all()}}>
+
                               <div class="form-group">
-                                 <label>Catégorie du produit</label>
-                                 <input type="text" class="form-control" placeholder="Catégorie du produit" required>
+                              <label>Catégorie du produit</label>
+                                <select class="form-control" name="catg">
+                                    @foreach($data_cat as $item)
+                                        <option value="{{ $item->id }}">{{ $item->nom }}</option>
+                                    @endforeach
+                               </select>
                               </div>
                               <div class="form-group">
                                  <label>Prix</label>
-                                 <input type="number" class="form-control" placeholder="Prix" required>
+                                 <input name="prix" type="number" class="form-control" placeholder="Prix" required>
+                              </div>
+                              <div class="form-group">
+                                 <label>Quantité</label>
+                                 <input name="quant" type="number" class="form-control" placeholder="Quantité" required>
                               </div>
                               <div class="form-group">
                                  <label>Télécharger la photo du Produit</label></br>
-                                 <input type="file" name="picture">
-                                 <input type="hidden" name="old_picture">
+                                 <input type="file" name="photo">
                               </div>
                               <div class="reset-button">
-                                 <a href="#" class="btn btn-success">Enregistrer</a>
+                                 <input type="submit" class="btn btn-success" value="Ajouter">
                               </div>
                            </form>
                         </div>

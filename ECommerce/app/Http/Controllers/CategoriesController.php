@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categorie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoriesController extends Controller
 {
@@ -90,5 +91,13 @@ class CategoriesController extends Controller
     public function destroy(Categorie $categories)
     {
         //
+    }
+
+    public function ajout_cat(Request $request)
+    {
+        $cat = $request->input('cat');
+
+        DB::insert("insert into categories (nom) values ('$cat')");
+        return view("website.backend.layouts.admin.admin_cat");
     }
 }

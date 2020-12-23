@@ -37,7 +37,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                               <div class="form-group">
                                  <label>Nom du Catégorie</label>
-                                 <input type="text" class="form-control" nom="cat" placeholder="Nom du Catégorie" required>
+                                 <input type="text" class="form-control" name="cat" placeholder="Nom du Catégorie" required>
                               </div>
                               <div class="reset-button">
                                  <input type="submit" class="btn btn-success" value="Ajouter">

@@ -80,4 +80,5 @@ Route::get('admin/add_cat', function () {
     return view('website.backend.layouts.admin.admin_cat');
 });
 
-Route::post('ajout_cat/', "ProduitsController@ajout_cat");
+Route::post('ajout_cat/', "CategoriesController@ajout_cat");
+Route::post('ajout_prod/', "ProduitsController@ajout_prod");

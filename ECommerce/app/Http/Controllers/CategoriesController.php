@@ -101,3 +101,4 @@ class CategoriesController extends Controller
         return view("website.backend.layouts.admin.admin_cat");
     }
 }
+

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Cart;
 use App\Models\Produit;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -16,9 +17,10 @@ class ProduitsController extends Controller
      */
     public function index()
     {
-      $data = Produit::all();
+      $data = Produit::inRandomOrder()->get();
+      $cat = Categorie::all();
       $new = Produit::all()->take(10);
-      return view('website.backend.layouts.main', ['data'=>$data],['new'=>$new]);
+      return view('website.backend.layouts.main', ['data'=>$data, 'cat' => $cat, 'new'=>$new]);
     }
 
     public function AddToCart(Request $request, $id)

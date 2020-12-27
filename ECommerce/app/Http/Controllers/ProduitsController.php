@@ -42,7 +42,7 @@ class ProduitsController extends Controller
         foreach ($cart_user_id as $item) {
             $cart->items[$item->prod_id]['quantity'] = $item->quantite;
             $prod_inf = Produit::find($item->prod_id);
-            $price = $prod_inf->prix;
+
             $cart->items[$item->prod_id]['totalSinglePrice'] = $item->totalSinglePrice;
             $cart->items[$item->prod_id]['data'] = $prod_inf;
 
@@ -111,19 +111,9 @@ class ProduitsController extends Controller
 
     public function ShowCart()
     {
-
         $cart = $this->getCart();
 
-
-        //if cart not empty
-        if($cart)
-        {
-            return view('website.backend.layouts.cart',['cartItems'=>$cart]);
-        }
-        else
-        {
-            return redirect()->route('boutique');
-        }
+        return view('website.backend.layouts.cart',['cartItems'=>$cart]);
     }
 
     public function deleteItemCart(Request $request,$id)
@@ -190,8 +180,7 @@ class ProduitsController extends Controller
 
     public function createNewOrder(Request $request)
     {
-        $cart = Session::get('cart');
-
+        $cart = $this->getCart();
         $name = $request->input('fname');
         $adresse = $request->input('add');
         $email = $request->input('email');
@@ -218,8 +207,10 @@ class ProduitsController extends Controller
             $created_order_items = DB::table("order_items")->insert($newItemsInCurrentOrder);
         }
 
-        //delete cart
-        Session::forget("cart");
+            //delete cart
+            $connected_user = Auth::User()->id;
+            CartStore::where('user_id', $connected_user)
+            ->delete();
 
         $pay_info = $newOrderArray;
         $pay_info["order_id"] = $order_id;

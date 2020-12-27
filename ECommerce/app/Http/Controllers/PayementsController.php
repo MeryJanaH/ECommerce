@@ -8,6 +8,8 @@ use App\Product;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Models\CartStore;
 
 class PayementsController extends Controller
 {
@@ -45,7 +47,10 @@ class PayementsController extends Controller
         {
             return redirect()->route("boutique");
         }
-        Session::forget('cart');
+        //delete cart
+        $connected_user = Auth::User()->id;
+        CartStore::where('user_id', $connected_user)
+            ->delete();
     }
 
     /**

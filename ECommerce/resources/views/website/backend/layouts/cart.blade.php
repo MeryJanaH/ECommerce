@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @include('website.backend.layouts.head')
+
 <body class=" shopping-cart page ">
    <!--salut-->
 	<!-- mobile menu -->

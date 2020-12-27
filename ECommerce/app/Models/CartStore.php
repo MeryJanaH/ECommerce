@@ -15,4 +15,6 @@ class CartStore extends Model
         'quantite',
         'totalSinglePrice'
     ];
+
+    public $timestamps = false;
 }

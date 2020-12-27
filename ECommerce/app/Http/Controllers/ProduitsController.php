@@ -25,30 +25,28 @@ class ProduitsController extends Controller
       return view('website.backend.layouts.main', ['data'=>$data, 'cat' => $cat, 'new'=>$new]);
     }
 
-    public function AddToCart(Request $request, $id)
-    {
-        //$request->session()->forget('cart');
-        //$request->session()->flush();
+    public function getCart(){
+        if(isset((Auth::User()->email)))
+        {
+            $connected_user = Auth::User()->id;
+        }else{
+            return view('website.backend.layouts.users.login');
+        }
+        $cart_user_id = CartStore::where('user_id', $connected_user)->get();
 
-        $connected_user = Auth::User()->id;
-
-        $prevCart2 = CartStore::where('user_id', $connected_user)->get();
-
-        $prevCart = new Cart(null);
+        $cart = new Cart(null);
 
         $tot_prix = 0;
-        $tot_qty = 0;
         $tot_ship = 0;
 
-        foreach ($prevCart2 as $item) {
-            $prevCart->items[$item->prod_id]['quantity'] = $item->quantite;
+        foreach ($cart_user_id as $item) {
+            $cart->items[$item->prod_id]['quantity'] = $item->quantite;
             $prod_inf = Produit::find($item->prod_id);
             $price = $prod_inf->prix;
-            $prevCart->items[$item->prod_id]['totalSinglePrice'] = $item->quantite*$price;
-            $prevCart->items[$item->prod_id]['data'] = $prod_inf;
+            $cart->items[$item->prod_id]['totalSinglePrice'] = $item->totalSinglePrice;
+            $cart->items[$item->prod_id]['data'] = $prod_inf;
 
-            $tot_prix += $price;
-            $tot_qty++;
+            $tot_prix += $item->totalSinglePrice;
 
             if ($prod_inf->shipping == "free") {
                 $ship = 0;
@@ -57,11 +55,15 @@ class ProduitsController extends Controller
             }
             $tot_ship += $ship;
         }
-        $prevCart->totalPrice = $tot_prix;
-        $prevCart->totalQuantity = $tot_qty;
-        $prevCart->totalShipping = $tot_ship;
+        $cart->totalPrice = $tot_prix;
+        $cart->totalShipping = $tot_ship;
 
-        //$prevCart = $request->session()->get('cart');
+        return $cart;
+    }
+
+    public function AddToCart(Request $request, $id)
+    {
+        $prevCart = $this->getCart();
 
         $src=$request->input('qty');
 
@@ -70,13 +72,18 @@ class ProduitsController extends Controller
         $product = Produit::find($id);
 
         if($src == 0){$src = 1;}
+
         $cart->AddItem($id, $product,$src);
 
+        return redirect()->route('boutique');
+
+        //$request->session()->forget('cart');
+        //$request->session()->flush();
+        //$prevCart = $request->session()->get('cart');
         //$request->session()->put('cart', $cart);
         //$prevCart2 = $request->session()->get('cart');
 
         //dump($cart);
-        return redirect()->route('boutique');
     }
 
 
@@ -84,18 +91,30 @@ class ProduitsController extends Controller
     {
         //$request->session()->forget('cart');
         //$request->session()->flush();
-        $prevCart = $request->session()->get('cart');
+        $prevCart = $this->getCart();
         $cart = new Cart($prevCart);
         $product = Produit::find($id);
-        $cart->AddItem($id, $product,1);
-        $request->session()->put('cart', $cart);
-        //dump($cart);
+        $cart->AddItem($id, $product, 1);
+
+        return redirect()->route('cart');
+    }
+
+    public function AddToCart_down(Request $request, $id)
+    {
+        $prevCart = $this->getCart();
+        $cart = new Cart($prevCart);
+        $product = Produit::find($id);
+        $cart->AddItem_down($id, $product);
+
         return redirect()->route('cart');
     }
 
     public function ShowCart()
     {
-        $cart = Session::get('cart');
+
+        $cart = $this->getCart();
+
+
         //if cart not empty
         if($cart)
         {
@@ -109,31 +128,21 @@ class ProduitsController extends Controller
 
     public function deleteItemCart(Request $request,$id)
     {
-        $src = $request->input('qty');
-        $cart = $request->session()->get('cart');
-        if(array_key_exists($id,$cart->items)){
-            unset($cart->items[$id]);
+        if (isset((Auth::User()->email))) {
+            $connected_user = Auth::User()->id;
+        } else {
+            return view('website.backend.layouts.users.login');
         }
 
-        $prevCart = $request->session()->get('cart');
-        $updatedCart = new Cart($prevCart);
-        $updatedCart->updatePriceQuantity($src);
+        CartStore::where('prod_id', $id)->where('user_id', $connected_user)
+            ->delete();
 
-        $request->session()->put("cart",$updatedCart);
+        $qty = CartStore::where('prod_id', $id)->where('user_id', $connected_user)->get();
 
-        return redirect()->route('cart');
-    }
+        $cart = $this->getCart();
+        $cart = new Cart($cart);
+        $cart->updatePriceQuantity($qty);
 
-    public function AddToCart_down(Request $request, $id)
-    {
-        //$request->session()->forget('cart');
-        //$request->session()->flush();
-        $prevCart = $request->session()->get('cart');
-        $cart = new Cart($prevCart);
-        $product = Produit::find($id);
-        $cart->AddItem_down($id, $product);
-        $request->session()->put('cart', $cart, 1);
-        //dump($cart);
         return redirect()->route('cart');
     }
 

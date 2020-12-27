@@ -3,7 +3,7 @@
 namespace App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\CartStore;
 class Cart
 {
     public $items; //[id=>['quantity' =>,'price' =>,'data'=>],..]
@@ -28,59 +28,85 @@ class Cart
 
     public function AddItem($id, $produit,$src)
     {
-        $connected_user = Auth::User()->id;
+        if (isset((Auth::User()->email))) {
+            $connected_user = Auth::User()->id;
+        } else {
+            return view('website.backend.layouts.users.login');
+        }
 
         $price = (int) ($produit->prix);
-        if($produit->shipping == "free") {$ship = 0;}
-        else {$ship = $produit->shipping;}
+
+        if($produit->shipping == "free")
+        {$ship = 0;}
+        else
+        {$ship = $produit->shipping;}
+
         //item already exists
         if (array_key_exists($id, $this->items)) {
             $ProdToAdd = $this->items[$id];
             $ProdToAdd['quantity']=$ProdToAdd['quantity']+$src;
             $ProdToAdd['totalSinglePrice']= $ProdToAdd['quantity'] * $price;
 
-            DB::insert("insert into cart_stores (user_id,prod_id,quantite,totalSinglePrice) values ($connected_user,$id,$ProdToAdd->quantity,$ProdToAdd->totalSinglePrice)");
+            $qty = $ProdToAdd['quantity'];
+            $prx = $ProdToAdd['totalSinglePrice'];
+
+            CartStore::where('prod_id', $id)->where('user_id', $connected_user)
+                ->update(['quantite' => $qty, 'totalSinglePrice' => $prx]);
+
         } else {
             $ProdToAdd = ['quantity' => $src, 'totalSinglePrice' => $src*$price, 'data' => $produit];
             $totPriceS = $src * $price;
+
             DB::insert("insert into cart_stores (user_id,prod_id,quantite,totalSinglePrice) values ($connected_user,$id,$src,$totPriceS)");
         }
         $price = (int) ($produit->prix) * $src;
 
         $this->items[$id] = $ProdToAdd;
         $this->totalPrice = $this->totalPrice + $price;
-        $this->totalQuantity+=$src;
         $this->totalShipping = $this->totalShipping + $ship*$src;
     }
 
 
     public function AddItem_down($id, $produit)
     {
+        if (isset((Auth::User()->email))) {
+            $connected_user = Auth::User()->id;
+        } else {
+            return view('website.backend.layouts.users.login');
+        }
+
         $price = (int) ($produit->prix);
         if ($produit->shipping == "free") {
             $ship = 0;
         } else {
             $ship = $produit->shipping;
         }
+
         //item already exists
         if (array_key_exists($id, $this->items)) {
             $ProdToAdd = $this->items[$id];
             $ProdToAdd['quantity']--;
             $ProdToAdd['totalSinglePrice'] = $ProdToAdd['quantity'] * $price;
-        } else {
-            $ProdToAdd = ['quantity' => 1, 'totalSinglePrice' => $price, 'data' => $produit];
+
+            $qty = $ProdToAdd['quantity'];
+            $prx = $ProdToAdd['totalSinglePrice'];
+
+            CartStore::where('prod_id', $id)->where('user_id', $connected_user)
+            ->update(['quantite' => $qty, 'totalSinglePrice' => $prx]);
         }
-        if($ProdToAdd['quantity'] == 0)
-        {
-            unset($this->items[$id]);
-            $this->updatePriceQuantity(1);
-        }
-        else
-        {
-        $this->items[$id] = $ProdToAdd;
-        $this->totalPrice = $this->totalPrice - $price;
-        $this->totalQuantity++;
-        $this->totalShipping = $this->totalShipping - $ship;
+        if(isset($ProdToAdd)) {
+            if($ProdToAdd['quantity'] == 0)
+            {
+                CartStore::where('prod_id', $id)->where('user_id', $connected_user)
+                ->delete();
+                $this->updatePriceQuantity(1);
+            }
+            else
+            {
+            $this->items[$id] = $ProdToAdd;
+            $this->totalPrice = $this->totalPrice - $price;
+            $this->totalShipping = $this->totalShipping - $ship;
+            }
         }
     }
 

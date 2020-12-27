@@ -41,10 +41,6 @@
 										<label for="frm-login-pass">Mot de pass:</label>
 										<input type="password" id="frm-login-pass" name="password" placeholder="************">
 									</fieldset>
-
-									<fieldset class="wrap-input">
-										<a class="link-function left-position" href="#" title="Forgotten password?">Mot de pass oublié ?</a>
-									</fieldset>
 									<input type="submit" class="btn btn-submit" value="S'identifier" name="submit">
 								</form>
 							</div>

@@ -18,6 +18,7 @@
         "autoloader",
         "barryvdh",
         "caisse",
+        "cartstores",
         "categorie",
         "catg",
         "checklogin",

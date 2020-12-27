@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\Cart;
+use App\Models\CartStore;
 use App\Models\Produit;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class ProduitsController extends Controller
 {
@@ -25,14 +27,54 @@ class ProduitsController extends Controller
 
     public function AddToCart(Request $request, $id)
     {
-        $src=$request->input('qty');
         //$request->session()->forget('cart');
         //$request->session()->flush();
-        $prevCart = $request -> session() ->get('cart');
+
+        $connected_user = Auth::User()->id;
+
+        $prevCart2 = CartStore::where('user_id', $connected_user)->get();
+
+        $prevCart = new Cart(null);
+
+        $tot_prix = 0;
+        $tot_qty = 0;
+        $tot_ship = 0;
+
+        foreach ($prevCart2 as $item) {
+            $prevCart->items[$item->prod_id]['quantity'] = $item->quantite;
+            $prod_inf = Produit::find($item->prod_id);
+            $price = $prod_inf->prix;
+            $prevCart->items[$item->prod_id]['totalSinglePrice'] = $item->quantite*$price;
+            $prevCart->items[$item->prod_id]['data'] = $prod_inf;
+
+            $tot_prix += $price;
+            $tot_qty++;
+
+            if ($prod_inf->shipping == "free") {
+                $ship = 0;
+            } else {
+                $ship = $prod_inf->shipping;
+            }
+            $tot_ship += $ship;
+        }
+        $prevCart->totalPrice = $tot_prix;
+        $prevCart->totalQuantity = $tot_qty;
+        $prevCart->totalShipping = $tot_ship;
+
+        //$prevCart = $request->session()->get('cart');
+
+        $src=$request->input('qty');
+
         $cart = new Cart($prevCart);
+
         $product = Produit::find($id);
+
+        if($src == 0){$src = 1;}
         $cart->AddItem($id, $product,$src);
-        $request->session()->put('cart', $cart);
+
+        //$request->session()->put('cart', $cart);
+        //$prevCart2 = $request->session()->get('cart');
+
         //dump($cart);
         return redirect()->route('boutique');
     }

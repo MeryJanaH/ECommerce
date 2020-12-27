@@ -1,6 +1,8 @@
 <?php
 
 namespace App;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class Cart
 {
@@ -26,7 +28,8 @@ class Cart
 
     public function AddItem($id, $produit,$src)
     {
-        if($src == 0){$src = 1;}
+        $connected_user = Auth::User()->id;
+
         $price = (int) ($produit->prix);
         if($produit->shipping == "free") {$ship = 0;}
         else {$ship = $produit->shipping;}
@@ -35,8 +38,12 @@ class Cart
             $ProdToAdd = $this->items[$id];
             $ProdToAdd['quantity']=$ProdToAdd['quantity']+$src;
             $ProdToAdd['totalSinglePrice']= $ProdToAdd['quantity'] * $price;
+
+            DB::insert("insert into cart_stores (user_id,prod_id,quantite,totalSinglePrice) values ($connected_user,$id,$ProdToAdd->quantity,$ProdToAdd->totalSinglePrice)");
         } else {
             $ProdToAdd = ['quantity' => $src, 'totalSinglePrice' => $src*$price, 'data' => $produit];
+            $totPriceS = $src * $price;
+            DB::insert("insert into cart_stores (user_id,prod_id,quantite,totalSinglePrice) values ($connected_user,$id,$src,$totPriceS)");
         }
         $price = (int) ($produit->prix) * $src;
 

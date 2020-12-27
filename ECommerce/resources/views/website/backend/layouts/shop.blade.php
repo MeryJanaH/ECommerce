@@ -25,7 +25,6 @@
 
 			<div class="wrap-breadcrumb">
 				<ul>
-                    <li class="item-link"><a href="#" class="link">home</a></li>
                     @if(isset($nom_cat))
                     <li class="item-link"><span>{{$nom_cat}}</span></li>
                     @endif
@@ -42,12 +41,6 @@
                         <h1 class="shop-title">Tous Les Produits</h1>
                         @endif
 						<div class="wrap-right">
-
-							<div class="sort-item product-per-page">
-								<select name="post-per-page" class="use-chosen" >
-									<option value="9" selected="selected">9 par page</option>
-								</select>
-							</div>
 
 							<div class="change-display-mode">
 								<a href="#" class="grid-mode display-mode active"><i class="fa fa-th"></i>Grid</a>
@@ -103,7 +96,6 @@
 							</ul>
 						</div>
 					</div><!-- Categories widget-->
-
 				</div><!--end sitebar-->
 
 			</div><!--end row-->

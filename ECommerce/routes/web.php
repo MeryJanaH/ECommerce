@@ -43,6 +43,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('website.backend.layouts.users.login');
 })->name('dashboard');
 
+
 Route::get('return-policy', ['uses' => "AdminController@return", 'as' => 'return-policy']);
 Route::get('privacy-policy', ['uses' => "AdminController@privacy", 'as' => 'privacy-policy']);
 Route::get('terms-conditions', ['uses' => "AdminController@terms", 'as' => 'terms-conditions']);
@@ -70,6 +71,7 @@ Route::get('paymentreceipt/{payerID}', ["uses"=> "PayementsController@showPaymen
 
 
 Route::get('/contact', ['uses' => "SendEmailController@contact", 'as' => 'contact']);
+
 Route::post('sendEmail/send', "SendEmailController@sendEmail");
 
 Route::get('admin/add_prod', function () {

@@ -190,19 +190,27 @@ class ProduitsController extends Controller
         $city = $request->input('city');
 
         $total = $cart->totalPrice + $cart->totalShipping;
+        if($total > 599){
+            $total = $total - $cart->totalShipping;
+        }
 
         //cart not empty
-        if($cart){
+        if ($cart) {
             $date = date('Y-m-d H:i:s');
-            $newOrderArray = array("status"=>"on_hold","date"=>$date,"del_date"=>$date,"price"=>$total,
-            "name"=>$name,"adresse"=>$adresse,"email"=>$email,"phone"=>$phone,"zip"=>$zip,"country"=>$country,"city"=>$city);
+            $newOrderArray = array(
+                "status" => "on_hold", "date" => $date, "del_date" => $date, "price" => $total,
+                "name" => $name, "adresse" => $adresse, "email" => $email, "phone" => $phone, "zip" => $zip, "country" => $country, "city" => $city
+            );
+            $created_order = DB::table("orders")->insert($newOrderArray);
             $order_id = DB::getPdo()->lastInsertId();
 
-        foreach($cart->items as $cart_item){
-            $item_id = $cart_item['data']['id'];
-            $item_name = $cart_item['data']['nom_prod'];
-            $item_price = $cart_item['data']['prix'];
-        }
+            foreach ($cart->items as $cart_item) {
+                $item_id = $cart_item['data']['id'];
+                $item_name = $cart_item['data']['nom_prod'];
+                $item_price = $cart_item['data']['prix'];
+                $newItemsInCurrentOrder = array("item_id" => $item_id, "order_id" => $order_id, "item_name" => $item_name, "item_price" => $item_price);
+                $created_order_items = DB::table("order_items")->insert($newItemsInCurrentOrder);
+            }
 
             //delete cart
             $connected_user = Auth::User()->id;

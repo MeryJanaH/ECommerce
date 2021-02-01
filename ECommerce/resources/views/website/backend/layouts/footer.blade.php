@@ -74,16 +74,6 @@
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
 							<div class="row">
 								<div class="wrap-footer-item twin-item">
-									<h3 class="item-header">Mon compte</h3>
-									<div class="item-content">
-										<div class="wrap-vertical-nav">
-											<ul>
-												<li class="menu-item"><a href="#" class="link-term">Mon compte</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="wrap-footer-item twin-item">
 									<h3 class="item-header">Infomation</h3>
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
@@ -99,12 +89,12 @@
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
-								<h3 class="item-header">réseau social</h3>
+								<h3 class="item-header">réseaux sociaux</h3>
 								<div class="item-content">
 									<div class="wrap-list-item social-network">
                                     <ul>
                                         <li><a href="{{url('https://www.facebook.com/AMWA-104433751565897t')}}" target="_blank" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="{{url('https://www.instagram.com/amwa2021shop/?hl=fr')}}" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 									</ul>
 									</div>
 								</div>
